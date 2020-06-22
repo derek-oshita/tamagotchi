@@ -36,7 +36,10 @@ class Tamagotchi {
 
 function createTamagotchi () {
     let name = $('#input-name').val(); 
-    let newTamagotchi = new Tamagotchi(name);  
+    let newTamagotchi = new Tamagotchi(name);
+    $(nameField).html(name); 
+    $(ageField).html(0);   
+    console.log(newTamagotchi); 
 }; 
 
 // function handleWindowPrompt () {
@@ -46,11 +49,16 @@ function createTamagotchi () {
 
 // Cached DOM Elements 
 
-// Create Tamagotchi
+// Create tamagotchi
 let name = $('#input-name').val(); 
 const createButton = $(`#create`); 
+
+// Age and name
+let nameField = $('#name'); 
+let ageField = $('#age'); 
 
 
 // Event listeners
 
+// Create tamagotchi 
 $(createButton).on('click', createTamagotchi); 
