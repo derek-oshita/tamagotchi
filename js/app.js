@@ -59,20 +59,23 @@ function createTamagotchi () {
     $(boredomField).html(tamagotchi.boredom); 
     $(hungerField).html(tamagotchi.hunger); 
     $(sleepinessField).html(tamagotchi.sleepiness);   
-    console.log(tamagotchi); 
+    // start timer 
+    startTimer(); 
 }; 
 
 
 
 // Start Timer 
+
 function startTimer () {
     const timer = setInterval ( function () {
-        time++; 
-        console.log(time); 
+        // Use the timer as a way to update its age
+        time++;
+        tamagotchiAge = time;  
+        $(ageField).html(tamagotchiAge); 
     }, 1000)
 }; 
 
-// startTimer(); 
 
 
 
@@ -92,6 +95,7 @@ const sleepinessField = $('#sleepiness');
 
 // Stage
 const stageField = $('#stage'); 
+const completedField = $('#completed'); 
 
 
 // Event listeners
