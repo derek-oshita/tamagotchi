@@ -28,23 +28,33 @@ class Tamagotchi {
 
 // Round creator? 
 
-// Global Variables 
+// --- Global Variables --- // 
 
+let time = 0; 
 
+// --- Functions --- // 
 
-// Functions 
-
+// Create tamagotchi
 function createTamagotchi () {
     let name = $('#input-name').val(); 
     let newTamagotchi = new Tamagotchi(name);
     $(nameField).html(name); 
     $(ageField).html(0);   
+    $(stageField).html(1); 
+    // startTimer (); 
     console.log(newTamagotchi); 
 }; 
 
-// function handleWindowPrompt () {
+// Start Timer 
+function startTimer () {
+    const timer = setInterval ( function () {
+        time++; 
+        console.log(time); 
+    }, 1000)
+}; 
 
-// }
+// startTimer(); 
+
 
 
 // Cached DOM Elements 
@@ -56,6 +66,9 @@ const createButton = $(`#create`);
 // Age and name
 let nameField = $('#name'); 
 let ageField = $('#age'); 
+
+// Stage
+let stageField = $('#stage'); 
 
 
 // Event listeners
