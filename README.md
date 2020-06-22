@@ -17,7 +17,7 @@ Technologies in play:
 
 A user is defined as any individual who opens the tamagotchi page and interacts with it. 
 
-1. The user will see a blank page with a button that says "create tamagotchi." 
+1. The user will start by entering a name into the text field then clicking the "create" button. The button will store that name in an object and then create the object with all of it's values. 
 
 2. Once the user clicks the button, an image will appear and the user will be prompted to name their tamagotchi. Once named, it will initiate a timer representing the tamagotchi's age. 
 

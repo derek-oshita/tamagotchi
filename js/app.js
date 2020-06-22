@@ -1,13 +1,11 @@
 // --- App State (Variables) --- // 
 
-
-
 // Tamagotchi creator 
 
 class Tamagotchi {
-    constructor (name) {
+    constructor (tamagotchiName) {
     // properties 
-        this.name = name || 'Charmander';
+        this.name = tamagotchiName || 'Charmander';
         this.age = 0; 
         this.boredom = 0; 
         this.hunger = 0; 
@@ -28,5 +26,31 @@ class Tamagotchi {
     };
 }; 
 
-// const test = new Tamagotchi('Mila'); 
-// console.log(test); 
+// Round creator? 
+
+// Global Variables 
+
+
+
+// Functions 
+
+function createTamagotchi () {
+    let name = $('#input-name').val(); 
+    let newTamagotchi = new Tamagotchi(name);  
+}; 
+
+// function handleWindowPrompt () {
+
+// }
+
+
+// Cached DOM Elements 
+
+// Create Tamagotchi
+let name = $('#input-name').val(); 
+const createButton = $(`#create`); 
+
+
+// Event listeners
+
+$(createButton).on('click', createTamagotchi); 
