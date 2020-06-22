@@ -1,7 +1,21 @@
 # tamagotchi
 PROJECT-ZERO - GENERAL ASSEMBLY - BY DEREK OSHITA 6/22
 
+
+// --- Scope --- // 
+
+The final objective is to build a tamagotchi game, where a user will interact with the tamagotchi in order to prevent it from dying.
+
+Technologies in play: 
+1. HTML
+2. CSS
+3. Vanilla JavaScript 
+4. jQuery 
+
+
 // --- User Story / Gameplay Logic --- // 
+
+A user is defined as any individual who opens the tamagotchi page and interacts with it. 
 
 1. The user will see a blank page with a button that says "create tamagotchi." 
 
@@ -18,15 +32,17 @@ PROJECT-ZERO - GENERAL ASSEMBLY - BY DEREK OSHITA 6/22
 
 // --- Wireframe --- // 
 
-Please see file: tamagotchi_protoype.pdf
+Please see file:
+
+(./tamagotchi_protoype.pdf)
 
 
 // --- Technical Requirements Checklist --- // 
 
 - HAVE ITS OWN REPO, under your github account. NOT A FORK. (DONE)
 - Git 20+ commits Commit early, commit often. Tell a story with your commits. Each message should give a clear idea what you changed.
-- Include Wireframes and User Stories in the README
-- Wireframe: - Basically draw out what your game will look like—very different way it could look. You can use paper or any wireframe tool you find online.
+- Include Wireframes and User Stories in the README (DONE)
+- Wireframe: - Basically draw out what your game will look like—very different way it could look. You can use paper or any wireframe tool you find online.(DONE)
 - User Stories - Wording should center around how a user interacts with your game, for example:
 The user click starts and the level starts
 When the user hits the f key a fire ball is catuplulated at a target. (DONE)

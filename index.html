@@ -14,7 +14,32 @@
     <script defer src="js/app.js"></script>
 </head>
 <body>
+    <!-- Header -->
     <h1>Tamagotchi</h1>
-    
+    <!-- Tamagotchi-Info -->
+    <section class="tamagotchi-info-container">
+        <p>Name:</p> <span id="name">#</span>
+        <p>Age:</p> <span id="age">#</span>
+    </section>
+    <!-- Metrics -->
+    <section class="metric-container">
+        <p>Boredom:</p> <span id="boredom"></span>
+        <p>Hunger:</p> <span id="hunger"></span>
+        <p>Sleepiness:</p> <span id="sleepiness"></span>
+    </section>
+    <!-- Image      -->
+    <div class="image-container">
+        <img id="charmander" src="https://i.dlpng.com/static/png/6474163_preview.png" alt="charmander">
+    </div>
+    <!-- Buttons  -->
+    <section class="button-container">
+        <button type="button" id="play">Play!</button>
+        <button type="button" id="feed">Feed!</button>
+        <button type="button" id="turn-off">Turn off the lights!</button>
+    </section>
+    <!-- Stage -->
+    <section class="stage-container">
+        <p>Stage:</p> <span id="stage">#</span>
+    </section>
 </body>
 </html>
