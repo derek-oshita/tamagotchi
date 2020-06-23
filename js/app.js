@@ -33,6 +33,7 @@ class Tamagotchi {
 // Not assigned until createTamagotchi() fires. 
 
 let round = 1; 
+let ageFieldPlaceholder = 0; 
 let tamagotchi; 
 let tamagotchiName; 
 let tamagotchiAge; 
@@ -67,7 +68,7 @@ function handleTamagotchi () {
 
 function handleTimer () {
     const timer = setInterval ( function () {
-        // Use the timer to increment age by seconds 
+        // Use the timer to increment tamagotchiAge by seconds 
         tamagotchiAge++;
         // Create a functin that converts that time into minutes 
         // $(ageField).html(`${tamagotchiAge} minutes old.`); 
@@ -79,10 +80,9 @@ function handleTimer () {
     }, 1000); 
 }; 
 
-// Update Age Field (not the actual value of tamagotchiAge)
+// Update Age Field (not the actual value of tamagotchiAge, that needs to continue to increment )
 
 function updateAgeField (time) {
-    let ageFieldPlaceholder = 0; 
     if (time % 10 === 0) {
         ageFieldPlaceholder += 1; 
         $(ageField).html(`${ageFieldPlaceholder} minutes old.`)
