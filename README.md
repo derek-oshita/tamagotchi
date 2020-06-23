@@ -4,13 +4,13 @@ PROJECT-ZERO - GENERAL ASSEMBLY - BY DEREK OSHITA 6/22
 
 // --- Scope --- // 
 
-The final objective is to build a tamagotchi game, where a user will interact with the tamagotchi in order to prevent it from dying.
+The final objective is to build a tamagotchi game where a user will interact with the tamagotchi in order to prevent it from dying...
 
 Technologies in play: 
 1. HTML
 2. CSS
 3. Vanilla JavaScript 
-4. jQuery 
+4. jQuery (DOM)
 
 
 // --- User Story / Gameplay Logic --- // 
@@ -46,12 +46,12 @@ Please see file:
 - User Stories - Wording should center around how a user interacts with your game, for example:
 The user click starts and the level starts
 When the user hits the f key a fire ball is catuplulated at a target. (DONE)
-- Render a game in the browser
+- Render a game in the browser (DONE)
 - Include separate HTML / CSS / JavaScript files (DONE)
 - Stick with KISS (Keep It Simple Stupid) and DRY (Don't Repeat Yourself) principles
 - Use JavaScript or jQuery for DOM manipulation
 - Deploy your game online, where the rest of the world can access it (we will show you how)
-- Use semantic markup for HTML and CSS (adhere to best practices)
+- Use semantic markup for HTML and CSS (adhere to best practices) (DONE)
 - Be reasonably complex
 
 
@@ -60,18 +60,18 @@ When the user hits the f key a fire ball is catuplulated at a target. (DONE)
 - Create a repo for your tomagotchi pet (DONE)
 - make a commit after you finish each one of the following
 - Create a Class (JS Class, look at your notes if your forget) for your tomagotchi
-- Instatiate your Tomagotchi
-- Display a character of your choice on the screen to represent your pet
-- Display the following metrics for your pet:
+- Instatiate your Tomagotchi (DONE)
+- Display a character of your choice on the screen to represent your pet (DONE)
+- Display the following metrics for your pet: (DONE)
 Hunger (1-10 scale)
 Sleepiness (1-10 scale)
 Boredom (1-10 scale)
 Age
-- Add buttons to the screen to feed your pet, turn off the lights, and play with your pet.
-- Add the ability to name your pet.
+- Add buttons to the screen to feed your pet, turn off the lights, and play with your pet. (DONE)
+- Add the ability to name your pet. (DONE)
 - Style the page.
 - Increase your pet's age every x minutes
-- Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing.
+- Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing. (DONE)
 - You pet should die if Hunger, Boredom, or Sleepiness hits 10.
 - Morph your pet at certain ages.
 - Animate your pet across the screen while it's alive.
