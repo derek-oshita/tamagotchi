@@ -85,7 +85,7 @@ function handleTimer() {
 function updateRound() {
     $(roundField).html(round); 
     // change comparison value to 1200
-    if ( (tamagotchiAge % 2 === 0) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
+    if ( (tamagotchiAge % 1200 === 0) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
         round += 1; 
         $(roundField).html(round); 
     }
@@ -94,13 +94,19 @@ function updateRound() {
 // Determine results 
 
 function determineResults() {
-    // change comparison value when test is complete
-    if ( (tamagotchiAge > 10) && (round > 3) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
+    if ( (tamagotchiAge === 3600) && (round === 3) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
         alert(`${tamagotchiName} is now ${ageFieldPlaceholder} minutes old. You win!`); 
         return;
-    } else if ( (tamagotchiBoredom >= 10) || (tamagotchiHunger >= 10) || (tamagotchiSleepiness >= 10) ) {
-        alert ('Your ')
-    }
+    } else if (tamagotchiBoredom >= 10) {
+        alert(`You forgot to play with ${tamagotchiName}. ${tamagotchiName} has died of boredom. :(`); 
+        return; 
+    } else if (tamagotchiHunger >= 10) {
+        alert(`You forgot to feed ${tamagotchiName}. ${tamagotchiName} has died of hunger. :(`); 
+        return; 
+    } else if (tamagotchiSleepiness >= 10 ) {
+        alert(`You forgot to turn off the lights so ${tamagotchiName} could sleep. ${tamagotchiName} has died of insomnia. :(`); 
+        return; 
+    } 
 }; 
 
 // Update age field (not the actual value of tamagotchiAge, that needs to continue to increment.)
@@ -119,7 +125,7 @@ function updateAgeField(time) {
 // Update boredom
 
 function updateBoredom(time) {
-    if (time % 360 === 0) {
+    if (time % 2 === 0) {
         tamagotchiBoredom += 1;
         tamagotchi.boredom += 1; 
         $(boredomField).html(tamagotchiBoredom);  
