@@ -1,3 +1,35 @@
 * {
     font-family: 'MuseoModerno', cursive;
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
 }
+
+/* HEADER  */
+
+header {
+    color: #fff; 
+    background-color: #ff0000; 
+    padding: 20px 0; 
+    text-align: center;
+}
+
+h1 {
+    font-size: 80px; 
+}
+
+#input-name {
+    border: 1px solid #000000; 
+}
+
+#create {
+    border: 1px solid #000000;     
+}
+
+/* Tamagotchi Info */
+
+.tamagotchi-info-container {
+    display: flex; 
+    justify-content: center;
+}
+

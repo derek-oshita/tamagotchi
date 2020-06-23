@@ -21,13 +21,13 @@ A user is defined as any individual who opens the tamagotchi page and interacts 
 
 2. An image of the tamagotchi will display.
 
-3. Three metrics will also be shown: hunger, sleepiness, and boredom. Each metric will initiate at 0. The metrics will increment every 6 minutes. If any of the metrics reach 10, the tamagotchi WILL PERISH. 
+3. Three metrics will also be shown: hunger, sleepiness, and boredom. Each metric will initiate at 0. The metrics will increment every 5 minutes. If any of the metrics reaches 10, the tamagotchi WILL PERISH. 
 
 4. The user can decrement the value of each metric- hunger, boredom, and sleepiness will be decremented by feed, play, and turn off the lights respectively. Each click will represent 1 decrement in order to prevent any metric from reaching 10. 
 
-5. Every 20 minutes, the the pet wil morph/evolve, creating another stage. There will be three stages. 
+5. Every 20 minutes, the the pet wil morph/evolve and the round will be updated. There will be three rounds. 
 
-6. The player wins if they can keep the tamagotchi alive through the third stage. 
+6. The player wins if they can keep the tamagotchi alive through the third round. 
 
 
 // --- Wireframe --- // 

@@ -61,20 +61,20 @@ function handleTamagotchi() {
     console.log(tamagotchi); 
 }; 
 
-// Start timer 
+// Start timer - the source of truth for the gameplay logic 
 
 function handleTimer() {
     const timer = setInterval ( function() {
-        // Use the timer to increment tamagotchiAge by seconds 
+        // Use the timer to increment tamagotchiAge and tamagotchi object by seconds 
         tamagotchiAge++;
         tamagotchi.age++; 
-        // Create a functin that converts that time into minutes 
-        // $(ageField).html(`${tamagotchiAge} minutes old.`); 
+        // converts age into minutes and adjusts the field every minute
         updateAgeField(tamagotchiAge); 
+        // updates all of the metrics according to the tamagotchiAge variable
         updateBoredom(tamagotchiAge); 
         updateHunger(tamagotchiAge); 
         updateSleepiness(tamagotchiAge); 
-        // Testing
+        // change round and determines if player wins or loses
         updateRound(); 
         determineResults(); 
     }, 1000); 
@@ -125,7 +125,7 @@ function updateAgeField(time) {
 // Update boredom
 
 function updateBoredom(time) {
-    if (time % 2 === 0) {
+    if (time % 300 === 0) {
         tamagotchiBoredom += 1;
         tamagotchi.boredom += 1; 
         $(boredomField).html(tamagotchiBoredom);  
@@ -135,7 +135,7 @@ function updateBoredom(time) {
 // Update hunger 
 
 function updateHunger(time) {
-    if (time % 360 === 0) {
+    if (time % 300 === 0) {
         tamagotchiHunger += 1;
         tamagotchi.hunger += 1; 
         $(hungerField).html(tamagotchiHunger);  
@@ -145,7 +145,7 @@ function updateHunger(time) {
 // Update sleepiness
 
 function updateSleepiness(time) {
-    if (time % 360 === 0) {
+    if (time % 300 === 0) {
         tamagotchiSleepiness += 1;
         tamagotchi.sleepiness += 1; 
         $(sleepinessField).html(tamagotchiSleepiness);  
@@ -174,6 +174,7 @@ function feed() {
     tamagotchiHunger -= 1; 
     tamagotchi.feed(); 
     $(hungerField).html(tamagotchiHunger); 
+    console.log(tamagotchi)
 }; 
 
 // Turn off the lights!
@@ -182,6 +183,7 @@ function turnOffLights() {
     tamagotchiSleepiness -= 1; 
     tamagotchi.turnOff(); 
     $(sleepinessField).html(tamagotchiSleepiness); 
+    console.log(tamagotchi)
 }; 
 
 // --- Cached DOM Elements --- // 

@@ -14,37 +14,58 @@
     <script defer src="js/app.js"></script>
 </head>
 <body>
-    <!-- Header / Create button-->
+    <!-- Main Container -->
+<div class="main-container"></div>
+    <!-- Header -->
     <header>
-        <h1>Tamagotchi</h1>
-        <input type="text" id="input-name" placeholder="Name your tamagotchi...">
-        <input type="submit" id="create" value="Create!">
+        <div class="header-container">
+            <!-- H1 -->
+            <div class="h1-container"></div>
+                <h1>Tamagotchi</h1>
+            </div>
+            <!-- Text Input  -->
+            <div class ="input-container">
+                <input type="text" id="input-name" placeholder="Name your tamagotchi...">
+                <input type="submit" id="create" value="Create!">
+            </div>
+        </div>
     </header>
     <!-- Tamagotchi-Info -->
     <section class="tamagotchi-info-container">
-        <p>Name:</p> <span id="name">#</span>
-        <p>Age:</p> <span id="age">#</span>
+        <div class="tamagotchi-name">
+            <span>Name:</span> <span id="name">-</span>
+        </div>
+        <div class="tamagotchi-age">
+            <span>Age:</span> <span id="age">-</span>
+        </div>
     </section>
-    <!-- Metrics -->
-    <section class="metric-container">
-        <p>Boredom:</p> <span id="boredom">#</span>
-        <p>Hunger:</p> <span id="hunger">#</span>
-        <p>Sleepiness:</p> <span id="sleepiness">#</span>
-    </section>
-    <!-- Image      -->
-    <div class="image-container">
-        <img id="charmander" src="https://i.dlpng.com/static/png/6474163_preview.png" alt="charmander">
+    <!-- Content Container -->
+    <div class="content-container"></div>
+        <!-- Metrics -->
+        <section class="metric-container">
+            <p>Boredom:</p> <span id="boredom">-</span>
+            <p>Hunger:</p> <span id="hunger">-</span>
+            <p>Sleepiness:</p> <span id="sleepiness">-</span>
+        </section>
+        <!-- Image      -->
+        <div class="image-container">
+            <img id="charmander" src="https://i.dlpng.com/static/png/6474163_preview.png" alt="charmander">
+        </div>
+        <!-- Buttons  -->
+        <section class="button-container">
+            <button type="button" id="play">Play!</button>
+            <button type="button" id="feed">Feed!</button>
+            <button type="button" id="turn-off">Turn off the lights!</button>
+        </section>
     </div>
-    <!-- Buttons  -->
-    <section class="button-container">
-        <button type="button" id="play">Play!</button>
-        <button type="button" id="feed">Feed!</button>
-        <button type="button" id="turn-off">Turn off the lights!</button>
-    </section>
     <!-- Stage Tracker -->
-    <section class="stage-container">
-        <p>Round:</p> <span id="round">#</span>
-        <p>Completed:</p> <span id="completed">#</span>
+    <section class="round-container">
+        <p>Round:</p> <span id="round">-</span>
     </section>
+    <!-- Footer -->
+    <footer>
+        <p>Derek Oshita - 2020</p>
+    </footer>
+</div>
 </body>
 </html>
