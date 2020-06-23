@@ -57,7 +57,7 @@ function createTamagotchi () {
     $(boredomField).html(tamagotchiBoredom); 
     $(hungerField).html(tamagotchiHunger); 
     $(sleepinessField).html(tamagotchiSleepiness);   
-    // start timer 
+
 }; 
 
 // Start Timer 
@@ -67,22 +67,25 @@ function startTimer () {
         // Use the timer as a way to update its age
         time++;
         $(ageField).html(time); 
+        // putting update boredom function here will increment boredom but it keeps going!
+        updateBoredom (time); 
     }, 1000); 
-
 }; 
 
 // Update Boredom
 
 function updateBoredom (time) {
-    if ( time > 1 ) {
-        tamagotchiBoredom++;
+    if ( time % 10 === 0) {
+        tamagotchiBoredom += 1;
         $(boredomField).html(tamagotchiBoredom);  
     }
 }; 
 
-// 24 hrs/10 = 2.4 hrs
-// 2.4 hours = 144/mins
-// 144/mins = 8640 seconds 
+// Increment condition: 
+// 3600 secs / hour 
+// every 6 minutes = 360 secs
+// use modulus 
+// if ( (time % 360) === 0) {tamagotchiBoredom++; $(boredomField).html(tamagotchiBoredom);   }
 
 // --- Cached DOM Elements --- // 
 
