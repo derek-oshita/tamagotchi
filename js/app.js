@@ -63,26 +63,19 @@ function createTamagotchi () {
     startTimer(); 
 }; 
 
-
-
 // Start Timer 
 
 function startTimer () {
     const timer = setInterval ( function () {
         // Use the timer as a way to update its age
         time++;
-        tamagotchiAge = time;  
+        tamagotchiAge = time;
+        tamagotchi.age = time;   
         $(ageField).html(tamagotchiAge); 
     }, 1000)
 }; 
 
-
-
-
-// Cached DOM Elements 
-
-// Buttons 
-const createButton = $(`#create`); 
+// --- Cached DOM Elements --- // 
 
 // Tamagotchi Details
 const nameField = $('#name'); 
@@ -93,12 +86,18 @@ const boredomField = $('#boredom');
 const hungerField = $('#hunger'); 
 const sleepinessField = $('#sleepiness');  
 
-// Stage
+// Buttons 
+const createButton = $('#create'); 
+const playButton = $('#play'); 
+const feedButton = $('#feed'); 
+const turnOffButton = $('#turn-off'); 
+
+// Stage Details 
 const stageField = $('#stage'); 
 const completedField = $('#completed'); 
 
 
-// Event listeners
+// --- Event listeners --- // 
 
 // Create tamagotchi 
 $(createButton).on('click', createTamagotchi); 
