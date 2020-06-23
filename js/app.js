@@ -69,6 +69,8 @@ function startTimer () {
         $(ageField).html(time); 
         // putting update boredom function here will increment boredom but it keeps going!
         updateBoredom (time); 
+        updateHunger (time); 
+        updateSleepiness (time); 
     }, 1000); 
 }; 
 
@@ -78,6 +80,24 @@ function updateBoredom (time) {
     if ( time % 10 === 0) {
         tamagotchiBoredom += 1;
         $(boredomField).html(tamagotchiBoredom);  
+    }
+}; 
+
+// Update Hunger 
+
+function updateHunger (time) {
+    if ( time % 10 === 0) {
+        tamagotchiHunger += 1;
+        $(hungerField).html(tamagotchiHunger);  
+    }
+}; 
+
+// Update 
+
+function updateSleepiness (time) {
+    if ( time % 10 === 0) {
+        tamagotchiSleepiness += 1;
+        $(sleepinessField).html(tamagotchiSleepiness);  
     }
 }; 
 
