@@ -6,7 +6,6 @@ class Tamagotchi {
     constructor (tamagotchiName) {
     // properties 
         this.name = tamagotchiName;
-        this.age = 0; 
         this.boredom = 0; 
         this.hunger = 0; 
         this.sleepiness = 0; 
@@ -30,11 +29,12 @@ class Tamagotchi {
 
 // --- Global Variables --- // 
 
+// Not assigned until createTamagotchi() fires. 
+
 let time = 0; 
 let round = 1; 
 let tamagotchi; 
 let tamagotchiName; 
-let tamagotchiAge; 
 let tamagotchiBoredom; 
 let tamagotchiHunger; 
 let tamagotchiSleepiness; 
@@ -49,18 +49,15 @@ function createTamagotchi () {
     tamagotchi = new Tamagotchi (nameInput); 
     tamagotchi.name = nameInput || 'Charmander'; 
     tamagotchiName = nameInput || 'Charmander'; 
-    tamagotchiAge = Tamagotchi.age; 
-    tamagotchiBoredom = Tamagotchi.boredom; 
-    tamagotchiHunger = Tamagotchi.hunger; 
-    tamagotchiSleepiness = Tamagotchi.sleepiness; 
+    tamagotchiBoredom = tamagotchi.boredom; 
+    tamagotchiHunger = tamagotchi.hunger; 
+    tamagotchiSleepiness = tamagotchi.sleepiness; 
     // inserting those values to the DOM using jQuery 
-    $(nameField).html(tamagotchi.name);
-    $(ageField).html(tamagotchi.age);
-    $(boredomField).html(tamagotchi.boredom); 
-    $(hungerField).html(tamagotchi.hunger); 
-    $(sleepinessField).html(tamagotchi.sleepiness);   
+    $(nameField).html(tamagotchiName);
+    $(boredomField).html(tamagotchiBoredom); 
+    $(hungerField).html(tamagotchiHunger); 
+    $(sleepinessField).html(tamagotchiSleepiness);   
     // start timer 
-    startTimer(); 
 }; 
 
 // Start Timer 
@@ -69,11 +66,23 @@ function startTimer () {
     const timer = setInterval ( function () {
         // Use the timer as a way to update its age
         time++;
-        tamagotchiAge = time;
-        tamagotchi.age = time;   
-        $(ageField).html(tamagotchiAge); 
-    }, 1000)
+        $(ageField).html(time); 
+    }, 1000); 
+
 }; 
+
+// Update Boredom
+
+function updateBoredom (time) {
+    if ( time > 1 ) {
+        tamagotchiBoredom++;
+        $(boredomField).html(tamagotchiBoredom);  
+    }
+}; 
+
+// 24 hrs/10 = 2.4 hrs
+// 2.4 hours = 144/mins
+// 144/mins = 8640 seconds 
 
 // --- Cached DOM Elements --- // 
 
@@ -101,3 +110,4 @@ const completedField = $('#completed');
 
 // Create tamagotchi 
 $(createButton).on('click', createTamagotchi); 
+$(createButton).on('click', startTimer)
