@@ -5,7 +5,7 @@
     box-sizing: border-box; 
 }
 
-/* HEADER  */
+/* Header  */
 
 header {
     color: #fff; 
@@ -31,5 +31,33 @@ h1 {
 .tamagotchi-info-container {
     display: flex; 
     justify-content: center;
+    background-color: #ff0000; 
 }
 
+.nested-tamagotchi-info {
+    /* remove border when complete */
+    width: 1000px; 
+    display: flex; 
+    justify-content: space-around; 
+}
+
+.tamagotchi-name {
+    color: #fff; 
+    font-size: 30px; 
+}
+
+.tamagotchi-age {
+    color: #fff; 
+    font-size: 30px;
+}
+
+.round-container {
+    color: #fff; 
+    font-size: 30px;
+}
+
+/* Content container  */
+
+.content-container {
+    display: flex; 
+}

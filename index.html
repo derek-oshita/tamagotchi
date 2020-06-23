@@ -32,20 +32,27 @@
     </header>
     <!-- Tamagotchi-Info -->
     <section class="tamagotchi-info-container">
-        <div class="tamagotchi-name">
-            <span>Name:</span> <span id="name">-</span>
-        </div>
-        <div class="tamagotchi-age">
-            <span>Age:</span> <span id="age">-</span>
+        <div class="nested-tamagotchi-info">
+            <div class="tamagotchi-name">
+                <span>Name:</span> <span id="name">-</span>
+            </div>
+            <div class="tamagotchi-age">
+                <span>Age:</span> <span id="age">-</span>
+            </div>
+            <div class="round-container">
+                <span>Round:</span> <span id="round">-</span>
+            </div>
         </div>
     </section>
+
+
     <!-- Content Container -->
     <div class="content-container"></div>
         <!-- Metrics -->
         <section class="metric-container">
-            <p>Boredom:</p> <span id="boredom">-</span>
-            <p>Hunger:</p> <span id="hunger">-</span>
-            <p>Sleepiness:</p> <span id="sleepiness">-</span>
+            <span>Boredom:</span> <span id="boredom">-</span>
+            <span>Hunger:</span> <span id="hunger">-</span>
+            <span>Sleepiness:</span> <span id="sleepiness">-</span>
         </section>
         <!-- Image      -->
         <div class="image-container">
@@ -58,10 +65,6 @@
             <button type="button" id="turn-off">Turn off the lights!</button>
         </section>
     </div>
-    <!-- Stage Tracker -->
-    <section class="round-container">
-        <p>Round:</p> <span id="round">-</span>
-    </section>
     <!-- Footer -->
     <footer>
         <p>Derek Oshita - 2020</p>
