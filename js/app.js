@@ -76,6 +76,7 @@ function handleTimer() {
         updateSleepiness(tamagotchiAge); 
         // Testing
         updateRound(); 
+        determineResults(); 
     }, 1000); 
 }; 
 
@@ -83,15 +84,24 @@ function handleTimer() {
 
 function updateRound() {
     $(roundField).html(round); 
-    if ( (tamagotchiAge % 1200 === 0) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
+    // change comparison value to 1200
+    if ( (tamagotchiAge % 2 === 0) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
         round += 1; 
         $(roundField).html(round); 
-    } else if ( (tamagotchiBoredom >= 10) || (tamagotchiHunger >= 10) || (tamagotchiSleepiness >= 10) ) {
-        alert(`${tamagotchiName} HAS DIED!!!`); 
-        return; 
     }
-}
+}; 
 
+// Determine results 
+
+function determineResults() {
+    // change comparison value when test is complete
+    if ( (tamagotchiAge > 10) && (round > 3) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
+        alert(`${tamagotchiName} is now ${ageFieldPlaceholder} minutes old. You win!`); 
+        return;
+    } else if ( (tamagotchiBoredom >= 10) || (tamagotchiHunger >= 10) || (tamagotchiSleepiness >= 10) ) {
+        alert ('Your ')
+    }
+}; 
 
 // Update age field (not the actual value of tamagotchiAge, that needs to continue to increment.)
 
