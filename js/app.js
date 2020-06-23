@@ -12,21 +12,17 @@ class Tamagotchi {
         this.sleepiness = 0; 
     }
     // instance methods
-    // play - needs play button click event as argument 
-    play () {
-        this.boredom = this.boredom--; 
+    play() {
+        this.boredom -= 1; 
     }; 
-    // feed - needs feed button click event as argument
-    feed () {
-        this.hunger = this.hunger--; 
+    feed() {
+        this.hunger -= 1; 
     }; 
-    // turn off - needs turn off button clicke event as argument
-    turnOff () {
-        this.sleepiness = this.sleepiness--; 
+    turnOff() {
+        this.sleepiness -= 1; 
     };
 }; 
 
-// Round creator? 
 
 // --- Global Variables --- // 
 
@@ -45,7 +41,7 @@ let tamagotchiSleepiness;
 
 // Create tamagotchi 
 
-function handleTamagotchi () {
+function handleTamagotchi() {
     let nameInput = $('#input-name').val(); 
     // assigning of values from new object to global variables
     tamagotchi = new Tamagotchi (nameInput); 
@@ -61,58 +57,81 @@ function handleTamagotchi () {
     $(boredomField).html(tamagotchiBoredom); 
     $(hungerField).html(tamagotchiHunger); 
     $(sleepinessField).html(tamagotchiSleepiness);   
-    // testing
-    console.log(tamagotchiAge); 
+    // Testing
+    console.log(tamagotchi); 
 }; 
 
 // Start timer 
 
-function handleTimer () {
-    const timer = setInterval ( function () {
+function handleTimer() {
+    const timer = setInterval ( function() {
         // Use the timer to increment tamagotchiAge by seconds 
         tamagotchiAge++;
+        tamagotchi.age++; 
         // Create a functin that converts that time into minutes 
         // $(ageField).html(`${tamagotchiAge} minutes old.`); 
-        updateAgeField (tamagotchiAge); 
-        updateBoredom (tamagotchiAge); 
-        updateHunger (tamagotchiAge); 
-        updateSleepiness (tamagotchiAge); 
-        console.log(tamagotchiAge); 
+        updateAgeField(tamagotchiAge); 
+        updateBoredom(tamagotchiAge); 
+        updateHunger(tamagotchiAge); 
+        updateSleepiness(tamagotchiAge); 
+        // Testing
+        updateRound(); 
     }, 1000); 
 }; 
 
+// Update round
+
+function updateRound() {
+    $(roundField).html(round); 
+    if ( (tamagotchiAge % 1200 === 0) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
+        round += 1; 
+        $(roundField).html(round); 
+    } else if ( (tamagotchiBoredom >= 10) || (tamagotchiHunger >= 10) || (tamagotchiSleepiness >= 10) ) {
+        alert(`${tamagotchiName} HAS DIED!!!`); 
+        return; 
+    }
+}
+
+
 // Update age field (not the actual value of tamagotchiAge, that needs to continue to increment.)
 
-function updateAgeField (time) {
+function updateAgeField(time) {
     if (time % 60 === 0) {
         ageFieldPlaceholder += 1; 
-        $(ageField).html(`${ageFieldPlaceholder} minutes old`)
+        if (ageFieldPlaceholder < 2) {
+            $(ageField).html(`${ageFieldPlaceholder} minute old`)
+        } else {
+            $(ageField).html(`${ageFieldPlaceholder} minutes old`)
+        }
     }
 }; 
 
 // Update boredom
 
-function updateBoredom (time) {
-    if ( time % 360 === 0) {
+function updateBoredom(time) {
+    if (time % 360 === 0) {
         tamagotchiBoredom += 1;
+        tamagotchi.boredom += 1; 
         $(boredomField).html(tamagotchiBoredom);  
     }
 }; 
 
 // Update hunger 
 
-function updateHunger (time) {
-    if ( time % 360 === 0) {
+function updateHunger(time) {
+    if (time % 360 === 0) {
         tamagotchiHunger += 1;
+        tamagotchi.hunger += 1; 
         $(hungerField).html(tamagotchiHunger);  
     }
 }; 
 
 // Update sleepiness
 
-function updateSleepiness (time) {
-    if ( time % 360 === 0) {
+function updateSleepiness(time) {
+    if (time % 360 === 0) {
         tamagotchiSleepiness += 1;
+        tamagotchi.sleepiness += 1; 
         $(sleepinessField).html(tamagotchiSleepiness);  
     }
 }; 
@@ -125,23 +144,27 @@ are less than 10.
 
 // Play!
 
-function play () {
+function play() {
     // add object method here? 
     tamagotchiBoredom -= 1; 
+    tamagotchi.play(); 
     $(boredomField).html(tamagotchiBoredom); 
+    console.log(tamagotchi); 
 }; 
 
 // Feed!
 
-function feed () {
+function feed() {
     tamagotchiHunger -= 1; 
+    tamagotchi.feed(); 
     $(hungerField).html(tamagotchiHunger); 
 }; 
 
 // Turn off the lights!
 
-function turnOffLights () {
+function turnOffLights() {
     tamagotchiSleepiness -= 1; 
+    tamagotchi.turnOff(); 
     $(sleepinessField).html(tamagotchiSleepiness); 
 }; 
 
@@ -163,7 +186,7 @@ const feedButton = $('#feed');
 const turnOffButton = $('#turn-off'); 
 
 // Stage details 
-const stageField = $('#stage'); 
+const roundField = $('#round'); 
 const completedField = $('#completed'); 
 
 
