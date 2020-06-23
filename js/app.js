@@ -1,6 +1,6 @@
 // --- App State (Variables) --- // 
 
-// Tamagotchi creator 
+// Class - tamagotchi creator 
 
 class Tamagotchi {
     constructor (tamagotchiName) {
@@ -30,10 +30,10 @@ class Tamagotchi {
 
 // --- Global Variables --- // 
 
-// Not assigned until createTamagotchi() fires. 
-
+// hardcoded variables
 let round = 1; 
 let ageFieldPlaceholder = 0; 
+// global variables don't get assigned until the user fires createTamagotchi(); 
 let tamagotchi; 
 let tamagotchiName; 
 let tamagotchiAge; 
@@ -43,7 +43,7 @@ let tamagotchiSleepiness;
 
 // --- Functions --- // 
 
-// Create tamagotchi - global variables don't get assigned until the user creates a tamagotchi 
+// Create tamagotchi 
 
 function handleTamagotchi () {
     let nameInput = $('#input-name').val(); 
@@ -61,10 +61,11 @@ function handleTamagotchi () {
     $(boredomField).html(tamagotchiBoredom); 
     $(hungerField).html(tamagotchiHunger); 
     $(sleepinessField).html(tamagotchiSleepiness);   
+    // testing
     console.log(tamagotchiAge); 
 }; 
 
-// Start Timer 
+// Start timer 
 
 function handleTimer () {
     const timer = setInterval ( function () {
@@ -80,48 +81,69 @@ function handleTimer () {
     }, 1000); 
 }; 
 
-// Update Age Field (not the actual value of tamagotchiAge, that needs to continue to increment )
+// Update age field (not the actual value of tamagotchiAge, that needs to continue to increment.)
 
 function updateAgeField (time) {
-    if (time % 10 === 0) {
+    if (time % 60 === 0) {
         ageFieldPlaceholder += 1; 
-        $(ageField).html(`${ageFieldPlaceholder} minutes old.`)
+        $(ageField).html(`${ageFieldPlaceholder} minutes old`)
     }
-}
+}; 
 
-
-// Update Boredom
+// Update boredom
 
 function updateBoredom (time) {
-    if ( time % 10 === 0) {
+    if ( time % 360 === 0) {
         tamagotchiBoredom += 1;
         $(boredomField).html(tamagotchiBoredom);  
     }
 }; 
 
-// Update Hunger 
+// Update hunger 
 
 function updateHunger (time) {
-    if ( time % 10 === 0) {
+    if ( time % 360 === 0) {
         tamagotchiHunger += 1;
         $(hungerField).html(tamagotchiHunger);  
     }
 }; 
 
-// Update Sleepiness
+// Update sleepiness
 
 function updateSleepiness (time) {
-    if ( time % 10 === 0) {
+    if ( time % 360 === 0) {
         tamagotchiSleepiness += 1;
         $(sleepinessField).html(tamagotchiSleepiness);  
     }
 }; 
 
-// Increment condition: 
-// 3600 secs / hour 
-// every 6 minutes = 360 secs
-// use modulus 
-// if ( (time % 360) === 0) {tamagotchiBoredom++; $(boredomField).html(tamagotchiBoredom);   }
+/* 
+Boredom, hunger, and sleepiness will increment every 6 minutes (360 seconds). 
+The user will win if the age reaches 1 hour (3600 seconds) and boredom, hunger, and sleepiness 
+are less than 10. 
+*/
+
+// Play!
+
+function play () {
+    // add object method here? 
+    tamagotchiBoredom -= 1; 
+    $(boredomField).html(tamagotchiBoredom); 
+}; 
+
+// Feed!
+
+function feed () {
+    tamagotchiHunger -= 1; 
+    $(hungerField).html(tamagotchiHunger); 
+}; 
+
+// Turn off the lights!
+
+function turnOffLights () {
+    tamagotchiSleepiness -= 1; 
+    $(sleepinessField).html(tamagotchiSleepiness); 
+}; 
 
 // --- Cached DOM Elements --- // 
 
@@ -152,4 +174,7 @@ $(createButton).on('click', handleTamagotchi);
 $(createButton).on('click', handleTimer); 
 
 // User actions 
+$(playButton).on('click', play); 
+$(feedButton).on('click', feed); 
+$(turnOffButton).on('click', turnOffLights); 
 
