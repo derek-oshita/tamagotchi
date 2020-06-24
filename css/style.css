@@ -76,7 +76,7 @@ h1 {
 /* Content container  */
 
 .content-container {
-    height: 37vh; 
+    height: 35vh; 
     display: flex; 
     justify-content: center;
 }

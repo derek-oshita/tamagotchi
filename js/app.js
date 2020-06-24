@@ -79,6 +79,7 @@ function handleTimer() {
         // change round and determines if player wins or loses
         updateRound(); 
         determineResults(); 
+        // exit game 
     }, 1000); 
 }; 
 
@@ -121,7 +122,7 @@ function updateAgeField(time) {
         } else {
             $(ageField).html(`${ageFieldPlaceholder} seconds old`)
         }
-    }
+    } 
 }; 
 
 // Update boredom
@@ -154,12 +155,6 @@ function updateSleepiness(time) {
     }
 }; 
 
-/* 
-Boredom, hunger, and sleepiness will increment every 6 minutes (360 seconds). 
-The user will win if the age reaches 1 hour (3600 seconds) and boredom, hunger, and sleepiness 
-are less than 10. 
-*/
-
 // Play!
 
 function play() {
@@ -167,6 +162,7 @@ function play() {
     tamagotchiBoredom -= 1; 
     tamagotchi.play(); 
     $(boredomField).html(tamagotchiBoredom); 
+    $(messageBubble).html(`You played with ${tamagotchiName}.`)
     console.log(tamagotchi); 
 }; 
 
@@ -176,6 +172,7 @@ function feed() {
     tamagotchiHunger -= 1; 
     tamagotchi.feed(); 
     $(hungerField).html(tamagotchiHunger); 
+    $(messageBubble).html(`${tamagotchiName} ate a snack.`)
     console.log(tamagotchi)
 }; 
 
@@ -185,6 +182,7 @@ function turnOffLights() {
     tamagotchiSleepiness -= 1; 
     tamagotchi.turnOff(); 
     $(sleepinessField).html(tamagotchiSleepiness); 
+    $(messageBubble).html(`ZZZZZZzzzzzz`)
     console.log(tamagotchi)
 }; 
 
