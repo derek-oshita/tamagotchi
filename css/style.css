@@ -18,6 +18,13 @@ h1 {
     font-size: 80px; 
 }
 
+.input-container {
+    height: 5vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
 #input-name {
     border: 1px solid #000000; 
 }
@@ -29,8 +36,10 @@ h1 {
 /* Tamagotchi Info */
 
 .tamagotchi-info-container {
+    height: 10vh; 
     display: flex; 
     justify-content: center;
+    align-items: center;
     background-color: #ff0000; 
 }
 
@@ -58,6 +67,7 @@ h1 {
 /* Content container  */
 
 .content-container {
+    height: 34vh; 
     display: flex; 
     justify-content: center;
 }
@@ -99,12 +109,13 @@ h1 {
 
 #charmander {
     width: 33vw; 
+    height: 33vh; 
 }
 
 /* Message Bubble */
 
 .message-bubble-container {
-    background-image: url("https://i.imgur.com/2gfwG.png");
+    background-color: #ff0000; 
     height: 20vh; 
     display: flex; 
     justify-content: center;
@@ -119,4 +130,13 @@ h1 {
     align-items: center;
     border: 3px solid #000000;   
     background-color: white;
+}
+
+/* Footer */
+
+footer {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
