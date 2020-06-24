@@ -57,6 +57,8 @@ function handleTamagotchi() {
     $(boredomField).html(tamagotchiBoredom); 
     $(hungerField).html(tamagotchiHunger); 
     $(sleepinessField).html(tamagotchiSleepiness);   
+    // message bubble changes 
+    messageBubble.html('Make it to 30 seconds old and keep your metrics on the left under 10 to win.')
     // Testing
     console.log(tamagotchi); 
 }; 
@@ -85,7 +87,7 @@ function handleTimer() {
 function updateRound() {
     $(roundField).html(round); 
     // change comparison value to 1200
-    if ( (tamagotchiAge % 1200 === 0) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
+    if ( (tamagotchiAge % 10 === 0) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
         round += 1; 
         $(roundField).html(round); 
     }
@@ -94,17 +96,17 @@ function updateRound() {
 // Determine results 
 
 function determineResults() {
-    if ( (tamagotchiAge === 3600) && (round === 3) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
-        alert(`${tamagotchiName} is now ${ageFieldPlaceholder} minutes old. You win!`); 
+    if ( (tamagotchiAge === 30) && (round === 3) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
+        $(messageBubble).html(`${tamagotchiName} is now ${ageFieldPlaceholder} seconds old. You win!`); 
         return;
     } else if (tamagotchiBoredom >= 10) {
-        alert(`You forgot to play with ${tamagotchiName}. ${tamagotchiName} has died of boredom. :(`); 
+        $(messageBubble).html(`You forgot to play with ${tamagotchiName}. ${tamagotchiName} has died of boredom. :(`); 
         return; 
     } else if (tamagotchiHunger >= 10) {
-        alert(`You forgot to feed ${tamagotchiName}. ${tamagotchiName} has died of hunger. :(`); 
+        $(messageBubble).html(`You forgot to feed ${tamagotchiName}. ${tamagotchiName} has died of hunger. :(`); 
         return; 
     } else if (tamagotchiSleepiness >= 10 ) {
-        alert(`You forgot to turn off the lights so ${tamagotchiName} could sleep. ${tamagotchiName} has died of insomnia. :(`); 
+        $(messageBubble).html(`You forgot to turn off the lights so ${tamagotchiName} could sleep. ${tamagotchiName} has died of insomnia. :(`); 
         return; 
     } 
 }; 
@@ -112,12 +114,12 @@ function determineResults() {
 // Update age field (not the actual value of tamagotchiAge, that needs to continue to increment.)
 
 function updateAgeField(time) {
-    if (time % 60 === 0) {
+    if (time % 1 === 0) {
         ageFieldPlaceholder += 1; 
         if (ageFieldPlaceholder < 2) {
-            $(ageField).html(`${ageFieldPlaceholder} minute old`)
+            $(ageField).html(`${ageFieldPlaceholder} second old`)
         } else {
-            $(ageField).html(`${ageFieldPlaceholder} minutes old`)
+            $(ageField).html(`${ageFieldPlaceholder} seconds old`)
         }
     }
 }; 
@@ -125,7 +127,7 @@ function updateAgeField(time) {
 // Update boredom
 
 function updateBoredom(time) {
-    if (time % 300 === 0) {
+    if (time % 6 === 0) {
         tamagotchiBoredom += 1;
         tamagotchi.boredom += 1; 
         $(boredomField).html(tamagotchiBoredom);  
@@ -135,7 +137,7 @@ function updateBoredom(time) {
 // Update hunger 
 
 function updateHunger(time) {
-    if (time % 300 === 0) {
+    if (time % 6 === 0) {
         tamagotchiHunger += 1;
         tamagotchi.hunger += 1; 
         $(hungerField).html(tamagotchiHunger);  
@@ -145,7 +147,7 @@ function updateHunger(time) {
 // Update sleepiness
 
 function updateSleepiness(time) {
-    if (time % 300 === 0) {
+    if (time % 6 === 0) {
         tamagotchiSleepiness += 1;
         tamagotchi.sleepiness += 1; 
         $(sleepinessField).html(tamagotchiSleepiness);  
@@ -203,10 +205,11 @@ const playButton = $('#play');
 const feedButton = $('#feed'); 
 const turnOffButton = $('#turn-off'); 
 
-// Stage details 
+// Round details 
 const roundField = $('#round'); 
-const completedField = $('#completed'); 
 
+// Message bubble 
+const messageBubble = $('#message-bubble'); 
 
 // --- Event listeners --- // 
 
