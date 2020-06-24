@@ -95,11 +95,16 @@ function updateRound() {
     // change modulus value to adjust the length of each round
     if ( (tamagotchiAge % 10 === 0) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
         round += 1; 
-        $(roundField).html(round); 
+        $(roundField).html(round);
+        $(nameField).html(`${tamagotchiName}`) 
     }
     updateImage(round); 
+    if (round === 3) {
+        $(nameField).html(`${tamagotchiName}`)
+    }
     if (round > 3) {
-        $(roundField).html('Game over!')
+        $(roundField).html('Game over!'); 
+        $(nameField).html(`${tamagotchiName}`); 
         return; 
     }
 }; 
@@ -119,11 +124,11 @@ function updateImage(round) {
         }   
     } else if (round === 3) {
         $('#charmander').attr('src', 'https://pm1.narvii.com/5805/58e2f0439b8b7bfa3fcfc57e2669238682dc6bbe_hq.jpg'); 
-        if (tamagotchiName === 'Charmander') {
+        if (tamagotchiName === 'Charmeleon') {
             tamagotchiName = 'Charizard'; 
             tamagotchi.name = 'Charizard'; 
             $(messageBubble).html(`Charmeleon evolved into ${tamagotchiName}!`)
-        } else {
+        } else if (tamagotchiName !== 'Charizard') {
             $(messageBubble).html(`${tamagotchiName} evolved into Charizard!`)
         } 
     }
