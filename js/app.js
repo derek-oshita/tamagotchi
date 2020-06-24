@@ -109,18 +109,25 @@ function updateRound() {
 
 function updateImage(round) {
     if (round === 2) {
-        $('#charmander').attr('src', 'https://www.pinclipart.com/picdir/big/84-843849_vector-library-stock-by-pklucario-on-charmeleon-clipart.png'); 
-        tamagotchiName = 'Charmeleon'; 
-        tamagotchi.name = 'Charmeleon'; 
-        $(messageBubble).html(`Charmander evolved into ${tamagotchiName}!`)
-    }
-    if (round === 3) {
+        $('#charmander').attr('src', 'https://img.pokemondb.net/artwork/large/charmeleon.jpg'); 
+        if (tamagotchiName === 'Charmander') {
+            tamagotchiName = 'Charmeleon'; 
+            tamagotchi.name = 'Charmeleon'; 
+            $(messageBubble).html(`Charmander evolved into ${tamagotchiName}!`)
+        } else if (tamagotchiName !== 'Charmeleon') {
+            $(messageBubble).html(`${tamagotchiName} evolved into Charmeleon!`)
+        }   
+    } else if (round === 3) {
         $('#charmander').attr('src', 'https://pm1.narvii.com/5805/58e2f0439b8b7bfa3fcfc57e2669238682dc6bbe_hq.jpg'); 
-        tamagotchiName = 'Charizard'; 
-        tamagotchi.name = 'Charizard'; 
-        $(messageBubble).html(`Charmeleon evolved into ${tamagotchiName}!`)
+        if (tamagotchiName === 'Charmander') {
+            tamagotchiName = 'Charizard'; 
+            tamagotchi.name = 'Charizard'; 
+            $(messageBubble).html(`Charmeleon evolved into ${tamagotchiName}!`)
+        } else {
+            $(messageBubble).html(`${tamagotchiName} evolved into Charizard!`)
+        } 
     }
-}
+}; 
 
 // Determine results 
 
