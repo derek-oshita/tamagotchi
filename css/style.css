@@ -60,4 +60,21 @@ h1 {
 
 .content-container {
     display: flex; 
+    justify-content: center;
+}
+
+.metric-container {
+    width: 33vw; 
+}
+
+.button-container {
+    width: 33vw; 
+}
+
+.image-container {
+    width: 33vw; 
+}
+
+#charmander {
+    width: 33vw; 
 }
