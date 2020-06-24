@@ -92,7 +92,17 @@ function updateRound() {
         round += 1; 
         $(roundField).html(round); 
     }
+    updateImage(round); 
 }; 
+
+// Update image 
+
+function updateImage(round) {
+    if (round === 2) {
+        $('#charmander').attr('src', 'https://www.pinclipart.com/picdir/big/84-843849_vector-library-stock-by-pklucario-on-charmeleon-clipart.png'); 
+    }; 
+    // if (round === 3)
+}
 
 // Determine results 
 
@@ -177,6 +187,7 @@ function feed() {
 }; 
 
 // Turn off the lights!
+// find way to change the background to a night time background. 
 
 function turnOffLights() {
     tamagotchiSleepiness -= 1; 
