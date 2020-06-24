@@ -35,7 +35,6 @@ h1 {
 }
 
 .nested-tamagotchi-info {
-    /* remove border when complete */
     width: 1000px; 
     display: flex; 
     justify-content: space-around; 
@@ -68,8 +67,10 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ff0000; 
+    /* background-color: #ff0000;  */
+    background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/105968384_3257438254295775_3468935819906672583_n.jpg?_nc_cat=109&_nc_sid=e007fa&_nc_ohc=2l6zEzV2hnMAX8KW9uL&_nc_ht=scontent-sjc3-1.xx&oh=bbc76f4c09362a2ab939bf80a1897617&oe=5F180FFC");
     color: #fff; 
+    font-size: 30px; 
 }
 
 /* .nested-metric-container {
@@ -81,7 +82,9 @@ h1 {
     display: flex; 
     justify-content: center;
     align-items: center;
-    background-color: #ff0000; 
+    /* background-color: #ff0000;  */
+    background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104705111_3257438650962402_9005646160614730359_n.jpg?_nc_cat=111&_nc_sid=e007fa&_nc_ohc=MiVMKDmuNIUAX8r3YTp&_nc_ht=scontent-sjc3-1.xx&oh=cef36cba87ed2ae4e8130e65894f5804&oe=5F19CE35");
+    font-size: 30px; 
 }
 
 /* .nested-button-container {
@@ -96,4 +99,24 @@ h1 {
 
 #charmander {
     width: 33vw; 
+}
+
+/* Message Bubble */
+
+.message-bubble-container {
+    background-image: url("https://i.imgur.com/2gfwG.png");
+    height: 20vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.nested-message-bubble-container {
+    width: 33.9vw; 
+    height: 12vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #000000;   
+    background-color: white;
 }
