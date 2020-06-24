@@ -15,7 +15,14 @@ header {
 }
 
 h1 {
-    font-size: 80px; 
+    font-size: 85px; 
+}
+
+.header-container {
+    height: 15vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }
 
 .input-container {
@@ -27,16 +34,18 @@ h1 {
 
 #input-name {
     border: 1px solid #000000; 
+    font-size: 20px; 
 }
 
 #create {
     border: 1px solid #000000;     
+    font-size: 20px; 
 }
 
 /* Tamagotchi Info */
 
 .tamagotchi-info-container {
-    height: 10vh; 
+    height: 8vh; 
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -67,7 +76,7 @@ h1 {
 /* Content container  */
 
 .content-container {
-    height: 34vh; 
+    height: 37vh; 
     display: flex; 
     justify-content: center;
 }
@@ -78,7 +87,7 @@ h1 {
     justify-content: center;
     align-items: center;
     /* background-color: #ff0000;  */
-    background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/105968384_3257438254295775_3468935819906672583_n.jpg?_nc_cat=109&_nc_sid=e007fa&_nc_ohc=2l6zEzV2hnMAX8KW9uL&_nc_ht=scontent-sjc3-1.xx&oh=bbc76f4c09362a2ab939bf80a1897617&oe=5F180FFC");
+    background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104494787_3257494894290111_8836280153277068429_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=GVuL5_YxkTUAX_cO2vW&_nc_ht=scontent-sjc3-1.xx&oh=a41ca069f53611a3fe647f9982567ffc&oe=5F19DF9B");
     color: #fff; 
     font-size: 30px; 
 }
@@ -93,7 +102,7 @@ h1 {
     justify-content: center;
     align-items: center;
     /* background-color: #ff0000;  */
-    background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104705111_3257438650962402_9005646160614730359_n.jpg?_nc_cat=111&_nc_sid=e007fa&_nc_ohc=MiVMKDmuNIUAX8r3YTp&_nc_ht=scontent-sjc3-1.xx&oh=cef36cba87ed2ae4e8130e65894f5804&oe=5F19CE35");
+    background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104494787_3257494894290111_8836280153277068429_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=GVuL5_YxkTUAX_cO2vW&_nc_ht=scontent-sjc3-1.xx&oh=a41ca069f53611a3fe647f9982567ffc&oe=5F19DF9B");
     font-size: 30px; 
 }
 
@@ -116,7 +125,7 @@ h1 {
 
 .message-bubble-container {
     background-color: #ff0000; 
-    height: 20vh; 
+    height: 25vh; 
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -135,7 +144,7 @@ h1 {
 /* Footer */
 
 footer {
-    height: 5vh;
+    height: 8vh;
     display: flex;
     justify-content: center;
     align-items: center;
