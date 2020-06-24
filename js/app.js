@@ -67,6 +67,7 @@ function handleTamagotchi() {
 
 function handleTimer() {
     const timer = setInterval ( function() {
+   
         // Use the timer to increment tamagotchiAge and tamagotchi object by seconds 
         tamagotchiAge++;
         tamagotchi.age++; 
@@ -80,6 +81,9 @@ function handleTimer() {
         updateRound(); 
         determineResults(); 
         // exit game 
+        if (tamagotchiAge >= 30) {
+            clearInterval(timer); 
+        }
     }, 1000); 
 }; 
 
@@ -93,6 +97,10 @@ function updateRound() {
         $(roundField).html(round); 
     }
     updateImage(round); 
+    if (round > 3) {
+        $(roundField).html('Game over!')
+        return; 
+    }
 }; 
 
 // Update image 
