@@ -1,5 +1,5 @@
 * {
-    font-family: 'MuseoModerno', cursive;
+    font-family: 'Montserrat', sans-serif;
     margin: 0; 
     padding: 0; 
     box-sizing: border-box; 
@@ -16,19 +16,20 @@ header {
 
 h1 {
     font-size: 85px; 
+    font-family: 'MuseoModerno', cursive;
 }
 
 .header-container {
     height: 15vh; 
     display: flex; 
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
+    align-items: center; 
 }
 
 .input-container {
     height: 5vh; 
     display: flex; 
-    justify-content: center; 
+    justify-content: center;  
     align-items: center;
 }
 
@@ -88,13 +89,24 @@ h1 {
     align-items: center;
     /* background-color: #ff0000;  */
     background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104494787_3257494894290111_8836280153277068429_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=GVuL5_YxkTUAX_cO2vW&_nc_ht=scontent-sjc3-1.xx&oh=a41ca069f53611a3fe647f9982567ffc&oe=5F19DF9B");
-    color: #fff; 
+    color: black; 
     font-size: 30px; 
+    font-family: 'Montserrat', sans-serif;
+    border: 2px solid #000000; 
 }
 
-/* .nested-metric-container {
-    
-} */
+.nested-metric-container {
+    background-color: #CDCDCD; 
+    border: 1.5px solid black; 
+    height: 12vh; 
+    width: 13vw; 
+} 
+
+button {
+    width: 125px; 
+    height: 38px; 
+    border: 1.5px solid #000000;  
+}
 
 .button-container {
     width: 33vw; 
@@ -104,6 +116,7 @@ h1 {
     /* background-color: #ff0000;  */
     background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104494787_3257494894290111_8836280153277068429_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=GVuL5_YxkTUAX_cO2vW&_nc_ht=scontent-sjc3-1.xx&oh=a41ca069f53611a3fe647f9982567ffc&oe=5F19DF9B");
     font-size: 30px; 
+    border: 2px solid #000000; 
 }
 
 /* .nested-button-container {
@@ -113,7 +126,7 @@ h1 {
 .image-container {
     width: 33.9vw; 
     text-align: center; 
-    border: 3px solid #000000;   
+    border: 2px solid #000000;   
 }
 
 #charmander {
@@ -125,7 +138,8 @@ h1 {
 
 .message-bubble-container {
     background-color: #ff0000; 
-    height: 25vh; 
+    border: 2px solid #000000; 
+    height: 27vh; 
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -137,7 +151,7 @@ h1 {
     display: flex; 
     justify-content: center;
     align-items: center;
-    border: 3px solid #000000;   
+    border: 2px solid #000000;   
     background-color: white;
     text-align: center;
 }
@@ -145,7 +159,7 @@ h1 {
 /* Footer */
 
 footer {
-    height: 8vh;
+    height: 7vh;
     display: flex;
     justify-content: center;
     align-items: center;

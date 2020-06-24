@@ -6,6 +6,8 @@
     <title>Tamagotchi</title>
     <!-- Google Font CDN -->
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <!-- Main Stylesheet -->
     <link rel="Stylesheet" href="css/style.css"> 
     <!-- Google CDN: jQuery -->
@@ -17,7 +19,7 @@
     <!-- Main Container -->
 <div class="main-container"></div>
     <!-- Header -->
-    <header>
+    <header id="dark-mode">
         <div class="header-container">
             <!-- H1 -->
             <div class="h1-container"></div>
@@ -26,13 +28,12 @@
             <!-- Text Input  -->
             <div class ="input-container">
                 <input type="text" id="input-name" placeholder="Name your tamagotchi...">
-                <br>
                 <input type="submit" id="create" value="Create!">
             </div>
         </div>
     </header>
     <!-- Tamagotchi-Info -->
-    <section class="tamagotchi-info-container">
+    <section class="tamagotchi-info-container" id="dark-mode">
         <div class="nested-tamagotchi-info">
             <div class="tamagotchi-name">
                 <span>Name:</span> <span id="name">-</span>
@@ -69,7 +70,7 @@
         </section>
     </div>
     <!-- Message bubble -->
-    <section class="message-bubble-container">
+    <section class="message-bubble-container" id="dark-mode">
         <div class="nested-message-bubble-container">
             <span id="message-bubble">Welcome to your tamagotchi!</span>
         </div>
