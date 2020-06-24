@@ -69,8 +69,7 @@ function handleTamagotchi() {
 
 function handleTimer() {
     const timer = setInterval ( function() {
-   
-        // Use the timer to increment tamagotchiAge and tamagotchi object by seconds 
+        // Use the timer to increment tamagotchiAge and tamagotchi.age property by seconds 
         tamagotchiAge++;
         tamagotchi.age++; 
         // converts age into minutes and adjusts the field every minute
@@ -93,7 +92,7 @@ function handleTimer() {
 
 function updateRound() {
     $(roundField).html(round); 
-    // change comparison value to 1200
+    // change modulus value to adjust the length of each round
     if ( (tamagotchiAge % 10 === 0) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
         round += 1; 
         $(roundField).html(round); 
@@ -109,7 +108,8 @@ function updateRound() {
 
 function updateImage(round) {
     if (round === 2) {
-        $('#charmander').attr('src', 'https://ya-webdesign.com/images600_/bulbasaur-vector-svg-14.png'); 
+        $('#charmander').attr('src', 'https://ya-webdesign.com/images600_/bulbasaur-vector-svg-14.png');
+        // $('#charmander').addClass("animate__animated animate__flash");  
         if (tamagotchiName === 'Charmander') {
             tamagotchiName = 'Charmeleon'; 
             tamagotchi.name = 'Charmeleon'; 
@@ -228,16 +228,28 @@ function turnOffLights() {
     $(sleepinessField).html(tamagotchiSleepiness); 
     $(messageBubble).html(`ZZZZZZzzzzzz`)
     console.log(tamagotchi)
-    $('[id=dark-mode]').css('background-color', 'midnightblue'); 
-    $('[id=dark-mode]').addClass('animate__animated animate__fadeIn')
-    $('.metric-container').css('background-image', 'url(https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104940799_3259354584104142_7756547770047346504_n.jpg?_nc_cat=107&_nc_sid=e007fa&_nc_ohc=EaV1GEMQUBkAX_uKT0n&_nc_ht=scontent-sjc3-1.xx&oh=4c71a3ac19d5a077ff1cdc73c861d1e2&oe=5F195F28)')
-    $('.metric-container').css('color', 'white'); 
-    $('.button-container').css('background-image', 'url(https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104827204_3259355104104090_417054165595891729_n.jpg?_nc_cat=110&_nc_sid=e007fa&_nc_ohc=THCHb6GeR7MAX_k4XfB&_nc_ht=scontent-sjc3-1.xx&oh=689251726272dd8f39010720b6f2acf0&oe=5F18863A)')
+    darkMode(); 
 }; 
 
-// function darkMode () {
-//     $('[id=dark-mode]').addClass('animate__animated animate__fadeIn')
-// }
+// Dark mode - nested function for turnOffLights
+
+function darkMode() {
+    $('[id=dark-mode]').css('background-color', '#485461'); 
+    $('[id=dark-mode]').css('background-image', 'linear-gradient(315deg, #485461 0%, #28313b 74%)');
+    $('[id=dark-mode]').addClass('animate__animated animate__fadeIn');
+    $('.metric-container').addClass('animate__animated animate__fadeIn');
+    $('.metric-container').css('background-image', 'url(https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104940799_3259354584104142_7756547770047346504_n.jpg?_nc_cat=107&_nc_sid=e007fa&_nc_ohc=EaV1GEMQUBkAX_uKT0n&_nc_ht=scontent-sjc3-1.xx&oh=4c71a3ac19d5a077ff1cdc73c861d1e2&oe=5F195F28)');
+    $('.metric-container').css('color', 'white'); 
+    $('.button-container').addClass('animate__animated animate__fadeIn');
+    $('.button-container').css('background-image', 'url(https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104827204_3259355104104090_417054165595891729_n.jpg?_nc_cat=110&_nc_sid=e007fa&_nc_ohc=THCHb6GeR7MAX_k4XfB&_nc_ht=scontent-sjc3-1.xx&oh=689251726272dd8f39010720b6f2acf0&oe=5F18863A)'); 
+    $('footer').css('background-color', '#485461'); 
+    $('footer').css('background-image', 'linear-gradient(315deg, #485461 0%, #28313b 74%)');
+    $('footer').addClass('animate__animated animate__fadeIn')
+}; 
+
+// Eggradient.com - 
+// background-color: #485461;
+// background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 
 // --- Cached DOM Elements --- // 
 

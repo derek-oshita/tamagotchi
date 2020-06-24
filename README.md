@@ -13,6 +13,7 @@ Technologies in play:
 4. jQuery (DOM)
 5. Google Fonts
 6. Animate.css
+7. Eggradients.com 
 
 
 // --- User Story / Gameplay Logic --- // 
