@@ -109,7 +109,7 @@ function updateRound() {
 
 function updateImage(round) {
     if (round === 2) {
-        $('#charmander').attr('src', 'https://img.pokemondb.net/artwork/large/charmeleon.jpg'); 
+        $('#charmander').attr('src', 'https://ya-webdesign.com/images600_/bulbasaur-vector-svg-14.png'); 
         if (tamagotchiName === 'Charmander') {
             tamagotchiName = 'Charmeleon'; 
             tamagotchi.name = 'Charmeleon'; 
