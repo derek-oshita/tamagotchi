@@ -96,7 +96,7 @@ function updateRound() {
 // Determine results 
 
 function determineResults() {
-    if ( (tamagotchiAge === 30) && (round === 3) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
+    if ( (tamagotchiAge === 30) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
         $(messageBubble).html(`${tamagotchiName} is now ${ageFieldPlaceholder} seconds old. You win!`); 
         return;
     } else if (tamagotchiBoredom >= 10) {
