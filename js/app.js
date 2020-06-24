@@ -58,7 +58,7 @@ function handleTamagotchi() {
     $(hungerField).html(tamagotchiHunger); 
     $(sleepinessField).html(tamagotchiSleepiness);   
     // message bubble changes 
-    messageBubble.html('Make it to 30 seconds old and keep your metrics on the left under 10 to win.')
+    messageBubble.html(`Get ${tamagotchiName} to 30 seconds old and keep your metrics on the left under 10 to win.`)
     // Testing
     console.log(tamagotchi); 
 }; 
