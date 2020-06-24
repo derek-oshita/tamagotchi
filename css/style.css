@@ -35,12 +35,19 @@ h1 {
 
 #input-name {
     border: 1px solid #000000; 
-    font-size: 20px; 
+    font-size: 12px; 
+    width: 180px; 
+    height: 38px; 
+    border-radius: 25px;
+    text-align: center;
 }
 
 #create {
     border: 1px solid #000000;     
-    font-size: 20px; 
+    font-size: 12px; 
+    width: 125px; 
+    height: 38px; 
+    border-radius: 25px;
 }
 
 /* Tamagotchi Info */
@@ -90,14 +97,12 @@ h1 {
     /* background-color: #ff0000;  */
     background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104494787_3257494894290111_8836280153277068429_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=GVuL5_YxkTUAX_cO2vW&_nc_ht=scontent-sjc3-1.xx&oh=a41ca069f53611a3fe647f9982567ffc&oe=5F19DF9B");
     color: black; 
-    font-size: 28px; 
+    font-size: 20px; 
     font-family: 'Montserrat', sans-serif;
     border: 1px solid #000000; 
 }
 
 .nested-metric-container {
-    background-color: #e7e7e7; 
-    border: 1.5px solid black; 
     height: 12vh; 
     width: 13vw; 
 } 
@@ -106,6 +111,7 @@ button {
     width: 125px; 
     height: 38px; 
     border: 1.5px solid #000000;  
+    border-radius: 25px;
 }
 
 .button-container {
@@ -154,6 +160,7 @@ button {
     border: 2px solid #000000;   
     background-color: white;
     text-align: center;
+    border-radius: 25px;
 }
 
 /* Footer */

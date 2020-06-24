@@ -11,6 +11,8 @@ Technologies in play:
 2. CSS
 3. Vanilla JavaScript 
 4. jQuery (DOM)
+5. Google Fonts
+6. Animate.css
 
 
 // --- User Story / Gameplay Logic --- // 
