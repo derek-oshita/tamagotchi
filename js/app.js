@@ -115,7 +115,7 @@ function updateImage(round) {
     if (round === 3) {
         $('#charmander').attr('src', 'https://pm1.narvii.com/5805/58e2f0439b8b7bfa3fcfc57e2669238682dc6bbe_hq.jpg'); 
         tamagotchiName = 'Charizard'; 
-        tamagotchiName = 'Charizard'; 
+        tamagotchi.name = 'Charizard'; 
         $(messageBubble).html(`Charmeleon evolved into ${tamagotchiName}!`)
     }
 }
@@ -154,7 +154,7 @@ function updateAgeField(time) {
 // Update boredom
 
 function updateBoredom(time) {
-    if (time % 6 === 0) {
+    if (time % 3 === 0) {
         tamagotchiBoredom += 1;
         tamagotchi.boredom += 1; 
         $(boredomField).html(tamagotchiBoredom);  
@@ -164,7 +164,7 @@ function updateBoredom(time) {
 // Update hunger 
 
 function updateHunger(time) {
-    if (time % 6 === 0) {
+    if (time % 3 === 0) {
         tamagotchiHunger += 1;
         tamagotchi.hunger += 1; 
         $(hungerField).html(tamagotchiHunger);  
@@ -174,7 +174,7 @@ function updateHunger(time) {
 // Update sleepiness
 
 function updateSleepiness(time) {
-    if (time % 6 === 0) {
+    if (time % 3 === 0) {
         tamagotchiSleepiness += 1;
         tamagotchi.sleepiness += 1; 
         $(sleepinessField).html(tamagotchiSleepiness);  
@@ -184,17 +184,23 @@ function updateSleepiness(time) {
 // Play!
 
 function play() {
-    // add object method here? 
+    // edge case to ensure boredom can't be less than 0
+    if ( (tamagotchiBoredom || tamagotchi.boredom) < 1) {
+        return; 
+    }; 
     tamagotchiBoredom -= 1; 
     tamagotchi.play(); 
     $(boredomField).html(tamagotchiBoredom); 
     $(messageBubble).html(`You played with ${tamagotchiName}.`)
-    console.log(tamagotchi); 
+    console.log(tamagotchi);
 }; 
 
 // Feed!
 
 function feed() {
+    if ( (tamagotchiHunger || tamagotchi.hunger) < 1) {
+        return; 
+    }; 
     tamagotchiHunger -= 1; 
     tamagotchi.feed(); 
     $(hungerField).html(tamagotchiHunger); 
@@ -206,6 +212,9 @@ function feed() {
 // find way to change the background to a night time background. 
 
 function turnOffLights() {
+    if ( (tamagotchiSleepiness || tamagotchi.sleepiness) < 1) {
+        return; 
+    }; 
     tamagotchiSleepiness -= 1; 
     tamagotchi.turnOff(); 
     $(sleepinessField).html(tamagotchiSleepiness); 
