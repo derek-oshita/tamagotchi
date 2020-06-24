@@ -65,14 +65,33 @@ h1 {
 
 .metric-container {
     width: 33vw; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff0000; 
+    color: #fff; 
 }
+
+/* .nested-metric-container {
+    
+} */
 
 .button-container {
     width: 33vw; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: #ff0000; 
 }
 
+/* .nested-button-container {
+
+} */
+
 .image-container {
-    width: 33vw; 
+    width: 33.9vw; 
+    text-align: center; 
+    border: 3px solid #000000;   
 }
 
 #charmander {
