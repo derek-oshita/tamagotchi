@@ -100,8 +100,16 @@ function updateRound() {
 function updateImage(round) {
     if (round === 2) {
         $('#charmander').attr('src', 'https://www.pinclipart.com/picdir/big/84-843849_vector-library-stock-by-pklucario-on-charmeleon-clipart.png'); 
-    }; 
-    // if (round === 3)
+        tamagotchiName = 'Charmeleon'; 
+        tamagotchi.name = 'Charmeleon'; 
+        $(messageBubble).html(`Charmander evolved into ${tamagotchiName}!`)
+    }
+    if (round === 3) {
+        $('#charmander').attr('src', 'https://pm1.narvii.com/5805/58e2f0439b8b7bfa3fcfc57e2669238682dc6bbe_hq.jpg'); 
+        tamagotchiName = 'Charizard'; 
+        tamagotchiName = 'Charizard'; 
+        $(messageBubble).html(`Charmeleon evolved into ${tamagotchiName}!`)
+    }
 }
 
 // Determine results 
