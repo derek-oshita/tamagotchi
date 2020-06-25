@@ -86,6 +86,9 @@ function handleTimer() {
         // exit game 
         if (tamagotchiAge >= 30) {
             clearInterval(timer); 
+            $(playButton).off('click', play); 
+            $(feedButton).off('click', feed); 
+            $(turnOffButton).off('click', turnOffLights); 
         }
     }, 1000); 
 }; 
@@ -121,7 +124,7 @@ function flashNewImage () {
 
 function bounceInNewImage () {
     $('#charmander').attr('class', 'animate__animated animate__bounceIn')
-}
+}; 
 
 // Update image 
 
