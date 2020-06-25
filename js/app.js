@@ -111,11 +111,17 @@ function updateRound() {
     }
 }; 
 
-// Animate image 
+// Flash image 
 
 function flashNewImage () {
     $('#charmander').attr('class', 'animate__animated animate__flash')
 };
+
+// Bounce in image 
+
+function bounceInNewImage () {
+    $('#charmander').attr('class', 'animate__animated animate__bounceIn')
+}
 
 // Update image 
 
@@ -137,7 +143,7 @@ function updateImage(round) {
     } else if (round === 3) {
         // update and animate image 
         $('#charmander').attr('src', 'https://pm1.narvii.com/5805/58e2f0439b8b7bfa3fcfc57e2669238682dc6bbe_hq.jpg'); 
-        // animateNewImage(round); 
+        bounceInNewImage(); 
         // changing the value of tamagotchiName and tamagotchi name property when the round changes
         if (tamagotchiName === 'Charmeleon') {
             tamagotchiName = 'Charizard'; 
