@@ -33,15 +33,12 @@ A user is defined as any individual who opens the tamagotchi page and interacts 
 
 // --- Wireframe --- // 
 
-Please see file:
-
-(./tamagotchi_protoype.pdf)
-
+![tamagotchi_prototype](wireframe/tamagotchi_prototype.pdf)
 
 // --- Technical Requirements Checklist --- // 
 
 - HAVE ITS OWN REPO, under your github account. NOT A FORK. (DONE)
-- Git 20+ commits Commit early, commit often. Tell a story with your commits. Each message should give a clear idea what you changed.
+- Git 20+ commits Commit early, commit often. Tell a story with your commits. Each message should give a clear idea what you changed. (DONE)
 - Include Wireframes and User Stories in the README (DONE)
 - Wireframe: - Basically draw out what your game will look like—very different way it could look. You can use paper or any wireframe tool you find online.(DONE)
 - User Stories - Wording should center around how a user interacts with your game, for example:
@@ -49,18 +46,18 @@ The user click starts and the level starts
 When the user hits the f key a fire ball is catuplulated at a target. (DONE)
 - Render a game in the browser (DONE)
 - Include separate HTML / CSS / JavaScript files (DONE)
-- Stick with KISS (Keep It Simple Stupid) and DRY (Don't Repeat Yourself) principles
-- Use JavaScript or jQuery for DOM manipulation
-- Deploy your game online, where the rest of the world can access it (we will show you how)
+- Stick with KISS (Keep It Simple Stupid) and DRY (Don't Repeat Yourself) principles (DONE)
+- Use JavaScript or jQuery for DOM manipulation (DONE)
+- Deploy your game online, where the rest of the world can access it (we will show you how) (DONE)
 - Use semantic markup for HTML and CSS (adhere to best practices) (DONE)
-- Be reasonably complex
+- Be reasonably complex (DONE)
 
 
 // --- Specifications Checklist --- // 
 
 - Create a repo for your tomagotchi pet (DONE)
-- make a commit after you finish each one of the following
-- Create a Class (JS Class, look at your notes if your forget) for your tomagotchi
+- make a commit after you finish each one of the following (DONE)
+- Create a Class (JS Class, look at your notes if your forget) for your tomagotchi (DONE)
 - Instatiate your Tomagotchi (DONE)
 - Display a character of your choice on the screen to represent your pet (DONE)
 - Display the following metrics for your pet: (DONE)
@@ -70,11 +67,11 @@ Boredom (1-10 scale)
 Age
 - Add buttons to the screen to feed your pet, turn off the lights, and play with your pet. (DONE)
 - Add the ability to name your pet. (DONE)
-- Style the page.
-- Increase your pet's age every x minutes
+- Style the page. (DONE)
+- Increase your pet's age every x minutes (DONE)
 - Increase your pet's Hunger, Sleepiness, and Bored metrics on an interval of your choosing. (DONE)
-- You pet should die if Hunger, Boredom, or Sleepiness hits 10.
-- Morph your pet at certain ages.
+- You pet should die if Hunger, Boredom, or Sleepiness hits 10. (DONE)
+- Morph your pet at certain ages. (DONE)
 - Animate your pet across the screen while it's alive.
 
 

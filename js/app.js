@@ -58,11 +58,12 @@ function handleTamagotchi() {
     $(hungerField).html(tamagotchiHunger); 
     $(sleepinessField).html(tamagotchiSleepiness);   
     // message bubble changes 
-    messageBubble.html(`Get ${tamagotchiName} to 30 seconds old and keep your metrics on the left under 10 to win.`)
+    messageBubble.html(`Get ${tamagotchiName} to 30 seconds old and keep your metrics under 10 to win.`)
     // Testing
     console.log(tamagotchi); 
-    // edge case to ensure only one object is created, however, clicking create more than once is still affecting the timer... 
+    // edge case to ensure only one object is created and the timer can only be started once
     $(createButton).off('click', handleTamagotchi); 
+    $(createButton).off('click', handleTimer); 
 }; 
 
 // Start timer - the source of truth for the gameplay logic 
@@ -103,7 +104,7 @@ function updateRound() {
         $(nameField).html(`${tamagotchiName}`)
     }
     if (round > 3) {
-        $(roundField).html('Game over!'); 
+        $(roundField).html('You win!'); 
         $(nameField).html(`${tamagotchiName}`); 
         return; 
     }
@@ -113,6 +114,7 @@ function updateRound() {
 
 function updateImage(round) {
     if (round === 2) {
+        $('#charmander').addClass('animate__animated animate__fadeIn');
         $('#charmander').attr('src', 'https://ya-webdesign.com/images600_/bulbasaur-vector-svg-14.png');
         // $('#charmander').addClass("animate__animated animate__flash");  
         if (tamagotchiName === 'Charmander') {
@@ -198,21 +200,20 @@ function updateSleepiness(time) {
 // Play!
 
 function play() {
-    // edge case to ensure boredom can't be less than 0
-    if ( (tamagotchiBoredom || tamagotchi.boredom) < 1) {
+    if ( (tamagotchiBoredom || tamagotchi.boredom) < 1 ) {
         return; 
     }; 
     tamagotchiBoredom -= 1; 
     tamagotchi.play(); 
     $(boredomField).html(tamagotchiBoredom); 
-    $(messageBubble).html(`You played with ${tamagotchiName}.`)
+    $(messageBubble).html(`You played with ${tamagotchiName}.`); 
     console.log(tamagotchi);
 }; 
 
 // Feed!
 
 function feed() {
-    if ( (tamagotchiHunger || tamagotchi.hunger) < 1) {
+    if ( (tamagotchiHunger || tamagotchi.hunger) < 1 ) {
         return; 
     }; 
     tamagotchiHunger -= 1; 
@@ -225,7 +226,7 @@ function feed() {
 // Turn off lights! 
 
 function turnOffLights() {
-    if ( (tamagotchiSleepiness || tamagotchi.sleepiness) < 1) {
+    if ( (tamagotchiSleepiness || tamagotchi.sleepiness) < 1 ) {
         return; 
     }; 
     tamagotchiSleepiness -= 1; 
@@ -237,6 +238,9 @@ function turnOffLights() {
 }; 
 
 // Dark mode - nested function for turnOffLights
+
+// Animation library by Animate.style
+// Color gradients by Eggradients.com
 
 function darkMode() {
     $('[id=dark-mode]').css('background-color', '#485461'); 
@@ -251,10 +255,6 @@ function darkMode() {
     $('footer').css('background-image', 'linear-gradient(315deg, #485461 0%, #28313b 74%)');
     $('footer').addClass('animate__animated animate__fadeIn')
 }; 
-
-// Eggradient.com - 
-// background-color: #485461;
-// background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
 
 // --- Cached DOM Elements --- // 
 
