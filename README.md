@@ -13,7 +13,7 @@ Technologies in play:
 4. jQuery
 5. Google Fonts
 6. Animate.css
-7. Eggradients.com 
+8. Borrowed images from Imgur. 
 
 
 // --- User Story / Gameplay Logic --- // 
