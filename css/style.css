@@ -53,6 +53,8 @@ h1 {
     height: 38px; 
     border-radius: 25px;
     outline: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
 }
 
 #create:hover {
@@ -124,6 +126,7 @@ button {
     border: 1.5px solid #000000;  
     border-radius: 25px;
     outline: none;
+    cursor: pointer;
 }
 
 button:hover {
@@ -135,7 +138,6 @@ button:hover {
     display: flex; 
     justify-content: center;
     align-items: center;
-    /* background-color: #ff0000;  */
     background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104494787_3257494894290111_8836280153277068429_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=GVuL5_YxkTUAX_cO2vW&_nc_ht=scontent-sjc3-1.xx&oh=a41ca069f53611a3fe647f9982567ffc&oe=5F19DF9B");
     font-size: 30px; 
     border: 1px solid #000000; 
@@ -189,7 +191,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Gradient and color by Eggradients.com */
+    /* Colors and by Eggradients.com */
     background-color: #eb4511;
     background-image: linear-gradient(315deg, #eb4511 0%, #b02e0c 74%);
 }

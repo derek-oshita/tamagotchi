@@ -39,11 +39,12 @@ let tamagotchiSleepiness;
 
 // --- Functions --- // 
 
-// Create tamagotchi 
+// Handle tamagotchi 
 
 function handleTamagotchi() {
+    // saving the value of whatever they put into the text box
     let nameInput = $('#input-name').val(); 
-    // assigning of values from new object to global variables
+    // assigning the values from new object to global variables
     tamagotchi = new Tamagotchi (nameInput); 
     tamagotchi.name = nameInput || 'Charmander'; 
     tamagotchiName = nameInput || 'Charmander'; 
@@ -66,7 +67,7 @@ function handleTamagotchi() {
     $(createButton).off('click', handleTimer); 
 }; 
 
-// Start timer - the source of truth for the gameplay logic 
+// Handle timer - the source of truth for the gameplay logic 
 
 function handleTimer() {
     const timer = setInterval ( function() {
@@ -79,7 +80,7 @@ function handleTimer() {
         updateBoredom(tamagotchiAge); 
         updateHunger(tamagotchiAge); 
         updateSleepiness(tamagotchiAge); 
-        // change round and determines if player wins or loses
+        // change round and determine if player wins or loses
         updateRound(); 
         determineResults(); 
         // exit game 
@@ -110,26 +111,40 @@ function updateRound() {
     }
 }; 
 
+// Animate image 
+
+function flashNewImage () {
+    $('#charmander').attr('class', 'animate__animated animate__flash')
+};
+
 // Update image 
 
 function updateImage(round) {
     if (round === 2) {
-        $('#charmander').addClass('animate__animated animate__fadeIn');
+        // update and animate image 
         $('#charmander').attr('src', 'https://ya-webdesign.com/images600_/bulbasaur-vector-svg-14.png');
-        // $('#charmander').addClass("animate__animated animate__flash");  
+        flashNewImage();  
+        // changing the value of tamagotchiName and tamagotchi name property when the round changes
         if (tamagotchiName === 'Charmander') {
             tamagotchiName = 'Charmeleon'; 
             tamagotchi.name = 'Charmeleon'; 
+            // update the message bubble for default value 
             $(messageBubble).html(`Charmander evolved into ${tamagotchiName}!`)
+        // update the message bubble for custom name value 
         } else if (tamagotchiName !== 'Charmeleon') {
             $(messageBubble).html(`${tamagotchiName} evolved into Charmeleon!`)
-        }   
+        } 
     } else if (round === 3) {
+        // update and animate image 
         $('#charmander').attr('src', 'https://pm1.narvii.com/5805/58e2f0439b8b7bfa3fcfc57e2669238682dc6bbe_hq.jpg'); 
+        // animateNewImage(round); 
+        // changing the value of tamagotchiName and tamagotchi name property when the round changes
         if (tamagotchiName === 'Charmeleon') {
             tamagotchiName = 'Charizard'; 
             tamagotchi.name = 'Charizard'; 
+            // update the message bubble for default value 
             $(messageBubble).html(`Charmeleon evolved into ${tamagotchiName}!`)
+        // update the message bubble for custom name value 
         } else if (tamagotchiName !== 'Charizard') {
             $(messageBubble).html(`${tamagotchiName} evolved into Charizard!`)
         } 
@@ -139,22 +154,26 @@ function updateImage(round) {
 // Determine results 
 
 function determineResults() {
+    // conditional check for winning the game 
     if ( (tamagotchiAge === 30) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
         $(messageBubble).html(`${tamagotchiName} is now ${ageFieldPlaceholder} seconds old. You win!`); 
         return;
+    // user loses if boredom reaches 10 
     } else if (tamagotchiBoredom >= 10) {
         $(messageBubble).html(`You forgot to play with ${tamagotchiName}. ${tamagotchiName} has died of boredom. :(`); 
         return; 
+    // user loses if hunger reaches 10 
     } else if (tamagotchiHunger >= 10) {
         $(messageBubble).html(`You forgot to feed ${tamagotchiName}. ${tamagotchiName} has died of hunger. :(`); 
         return; 
+    // user loses if sleepiness reaches 10
     } else if (tamagotchiSleepiness >= 10 ) {
         $(messageBubble).html(`You forgot to turn off the lights so ${tamagotchiName} could sleep. ${tamagotchiName} has died of insomnia. :(`); 
         return; 
     } 
 }; 
 
-// Update age field (not the actual value of tamagotchiAge, that needs to continue to increment.)
+// Update age field - you can change % modulus value to conver the age into minutes if you want your game to run longer. This ensures that tamagotchiAge continues to increment by the second. 
 
 function updateAgeField(time) {
     if (time % 1 === 0) {
@@ -200,9 +219,11 @@ function updateSleepiness(time) {
 // Play!
 
 function play() {
+    // edge case to ensure you can't run play if boredom is < 1
     if ( (tamagotchiBoredom || tamagotchi.boredom) < 1 ) {
         return; 
     }; 
+    // adjust variable values, message bubble, and object properties  
     tamagotchiBoredom -= 1; 
     tamagotchi.play(); 
     $(boredomField).html(tamagotchiBoredom); 
@@ -213,9 +234,11 @@ function play() {
 // Feed!
 
 function feed() {
+    // edge case to ensure you can't run feed if hunger is < 1
     if ( (tamagotchiHunger || tamagotchi.hunger) < 1 ) {
         return; 
     }; 
+    // adjust variable values, message bubble, and object properties  
     tamagotchiHunger -= 1; 
     tamagotchi.feed(); 
     $(hungerField).html(tamagotchiHunger); 
@@ -226,19 +249,21 @@ function feed() {
 // Turn off lights! 
 
 function turnOffLights() {
+    // edge case to ensure you can't run turnOffLights if sleepiness is < 1
     if ( (tamagotchiSleepiness || tamagotchi.sleepiness) < 1 ) {
         return; 
-    }; 
+    };
+    // adjust variable values, message bubble, and object properties  
     tamagotchiSleepiness -= 1; 
     tamagotchi.turnOff(); 
     $(sleepinessField).html(tamagotchiSleepiness); 
     $(messageBubble).html(`ZZZZZZzzzzzz`)
     console.log(tamagotchi)
+    // easter egg ;)
     darkMode(); 
 }; 
 
 // Dark mode - nested function for turnOffLights
-
 // Animation library by Animate.style
 // Color gradients by Eggradients.com
 

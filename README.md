@@ -10,7 +10,7 @@ Technologies in play:
 1. HTML
 2. CSS
 3. Vanilla JavaScript 
-4. jQuery (DOM)
+4. jQuery
 5. Google Fonts
 6. Animate.css
 7. Eggradients.com 
@@ -33,7 +33,7 @@ A user is defined as any individual who opens the tamagotchi page and interacts 
 
 // --- Wireframe --- // 
 
-![tamagotchi_prototype](wireframe/tamagotchi_prototype.pdf)
+![landing](./wireframe/tamagotchi_prototype.PDF)
 
 // --- Technical Requirements Checklist --- // 
 
