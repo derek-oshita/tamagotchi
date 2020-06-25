@@ -11,6 +11,7 @@ header {
     color: #fff; 
     background-color: #eb4511;
     background-image: linear-gradient(315deg, #eb4511 0%, #b02e0c 74%);
+    background-image: url("https://download.hipwallpaper.com/desktop/1920/1080/78/40/NF95E6.png");
     padding: 20px 0; 
     text-align: center;
 }
@@ -162,10 +163,10 @@ button:hover {
 
 .message-bubble-container {
     /* Colors and gradients by Eggradients.com */
-    /* background-color: #eb4511;
-    background-image: linear-gradient(315deg, #eb4511 0%, #b02e0c 74%);  */
-    background-color: red;
-    background-image: url("https://wallpapercave.com/wp/rR2wH4G.jpg"); 
+    background-color: #eb4511;
+    background-image: linear-gradient(315deg, #eb4511 0%, #b02e0c 74%); 
+    /* background-image: url("https://wallpapercave.com/wp/rR2wH4G.jpg");  */
+    /* background-image: url("https://download.hipwallpaper.com/desktop/1920/1080/78/40/NF95E6.png");  */
     /* background-repeat: no-repeat; */
     border: 1px solid #000000; 
     height: 27vh; 
