@@ -5,13 +5,19 @@
     box-sizing: border-box; 
 }
 
+body {
+    /* background-color: #f71735;
+    background-image: linear-gradient(147deg, #f71735 0%, #db3445 74%); */
+    background-image: url("https://i.imgur.com/2gfwG.png");
+}
+
 /* Header  */
 
 header {
     color: #fff; 
-    background-color: #eb4511;
-    background-image: linear-gradient(315deg, #eb4511 0%, #b02e0c 74%);
-    background-image: url("https://download.hipwallpaper.com/desktop/1920/1080/78/40/NF95E6.png");
+    /* background-color: #eb4511;
+    background-image: linear-gradient(315deg, #eb4511 0%, #b02e0c 74%); */
+    /* background-image: url("https://download.hipwallpaper.com/desktop/1920/1080/78/40/NF95E6.png"); */
     padding: 20px 0; 
     text-align: center;
 }
@@ -69,10 +75,10 @@ h1 {
     display: flex; 
     justify-content: center;
     align-items: center;
-    border: 1px solid #000000; 
+    /* border: 2px solid #000000;  */
     /* Colors and gradients by Eggradients.com */
-    background-color: #eb4511;
-    background-image: linear-gradient(315deg, #eb4511 0%, #b02e0c 74%);
+    /* background-color: #f71735;
+    background-image: linear-gradient(147deg, #f71735 0%, #db3445 74%); */
 }
 
 .nested-tamagotchi-info {
@@ -109,22 +115,19 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104494787_3257494894290111_8836280153277068429_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=GVuL5_YxkTUAX_cO2vW&_nc_ht=scontent-sjc3-1.xx&oh=a41ca069f53611a3fe647f9982567ffc&oe=5F19DF9B");
+    /* background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104494787_3257494894290111_8836280153277068429_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=GVuL5_YxkTUAX_cO2vW&_nc_ht=scontent-sjc3-1.xx&oh=a41ca069f53611a3fe647f9982567ffc&oe=5F19DF9B"); */
     color: black; 
-    font-size: 20px; 
-    font-family: 'Montserrat', sans-serif;
-    border: 1px solid #000000; 
+    font-size: 30px; 
+    /* border: 1px solid #000000;  */
 }
 
-.nested-metric-container {
-    height: 12vh; 
-    width: 13vw; 
-} 
+/*.nested-metric-container {
+} */
 
 button {
     width: 125px; 
     height: 38px; 
-    border: 1.5px solid #000000;  
+    /* border: 1.5px solid #000000;   */
     border-radius: 25px;
     outline: none;
     cursor: pointer;
@@ -139,9 +142,9 @@ button:hover {
     display: flex; 
     justify-content: center;
     align-items: center;
-    background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104494787_3257494894290111_8836280153277068429_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=GVuL5_YxkTUAX_cO2vW&_nc_ht=scontent-sjc3-1.xx&oh=a41ca069f53611a3fe647f9982567ffc&oe=5F19DF9B");
+    /* background-image: url("https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104494787_3257494894290111_8836280153277068429_n.jpg?_nc_cat=103&_nc_sid=e007fa&_nc_ohc=GVuL5_YxkTUAX_cO2vW&_nc_ht=scontent-sjc3-1.xx&oh=a41ca069f53611a3fe647f9982567ffc&oe=5F19DF9B"); */
     font-size: 30px; 
-    border: 1px solid #000000; 
+    /* border: 1px solid #000000;  */
 }
 
 /* .nested-button-container {
@@ -149,6 +152,7 @@ button:hover {
 } */
 
 .image-container {
+    background-color: white;
     width: 33.9vw; 
     text-align: center; 
     border: 2px solid #000000;   
@@ -163,12 +167,12 @@ button:hover {
 
 .message-bubble-container {
     /* Colors and gradients by Eggradients.com */
-    background-color: #eb4511;
-    background-image: linear-gradient(315deg, #eb4511 0%, #b02e0c 74%); 
+    /* background-color: #f71735;
+    background-image: linear-gradient(147deg, #f71735 0%, #db3445 74%); */
     /* background-image: url("https://wallpapercave.com/wp/rR2wH4G.jpg");  */
     /* background-image: url("https://download.hipwallpaper.com/desktop/1920/1080/78/40/NF95E6.png");  */
     /* background-repeat: no-repeat; */
-    border: 1px solid #000000; 
+    /* border: 1px solid #000000;  */
     height: 27vh; 
     display: flex; 
     justify-content: center;
@@ -177,7 +181,7 @@ button:hover {
 
 .nested-message-bubble-container {
     width: 40vw; 
-    height: 12vh; 
+    height: 14vh; 
     display: flex; 
     justify-content: center;
     align-items: center;
@@ -190,13 +194,13 @@ button:hover {
 /* Footer */
 
 footer {
-    height: 7vh;
+    height: 6vh;
     color: white; 
     display: flex;
     justify-content: center;
     align-items: center;
     /* Colors and by Eggradients.com */
-    background-color: #eb4511;
-    background-image: linear-gradient(315deg, #eb4511 0%, #b02e0c 74%);
+    /* background-color: #eb4511;
+    background-image: linear-gradient(315deg, #eb4511 0%, #b02e0c 74%); */
 }
 

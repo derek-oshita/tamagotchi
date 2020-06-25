@@ -277,6 +277,7 @@ function turnOffLights() {
 // Color gradients by Eggradients.com
 
 function darkMode() {
+    $('body').css('background-image', 'none'); 
     $('[id=dark-mode]').css('background-color', '#485461'); 
     $('[id=dark-mode]').css('background-image', 'linear-gradient(315deg, #485461 0%, #28313b 74%)');
     $('[id=dark-mode]').addClass('animate__animated animate__fadeIn');
