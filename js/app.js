@@ -316,7 +316,7 @@ const messageBubble = $('#message-bubble');
 // --- Event listeners --- // 
 
 // Create tamagotchi 
-$(createButton).on('click', handleTamagotchi); 
+$(createButton).on('click keypress', handleTamagotchi); 
 $(createButton).on('click', handleTimer); 
 
 // User actions 
