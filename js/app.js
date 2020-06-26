@@ -163,11 +163,8 @@ function updateImage(round) {
 
 function determineResults() {
     // conditional check for winning the game 
-    if ( (tamagotchiAge === 30) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
-        $(messageBubble).html(`${tamagotchiName} is now ${ageFieldPlaceholder} seconds old. You win!`); 
-        return;
     // user loses if boredom reaches 10 
-    } else if (tamagotchiBoredom >= 10) {
+    if (tamagotchiBoredom >= 10) {
         $(messageBubble).html(`You forgot to play with ${tamagotchiName}. ${tamagotchiName} has died of boredom. :(`); 
         return; 
     // user loses if hunger reaches 10 
@@ -178,8 +175,12 @@ function determineResults() {
     } else if (tamagotchiSleepiness >= 10 ) {
         $(messageBubble).html(`You forgot to turn off the lights so ${tamagotchiName} could sleep. ${tamagotchiName} has died of insomnia. :(`); 
         return; 
-    } 
+    } else if ( (tamagotchiAge === 30) && (tamagotchiBoredom < 10) && (tamagotchiHunger < 10) && (tamagotchiSleepiness < 10) ) {
+        $(messageBubble).html(`${tamagotchiName} is now ${ageFieldPlaceholder} seconds old. You win!`); 
+        return;
+    }
 }; 
+
 
 // Update age field - you can change % modulus value to conver the age into minutes if you want your game to run longer. This ensures that tamagotchiAge continues to increment by the second. 
 
@@ -197,7 +198,7 @@ function updateAgeField(time) {
 // Update boredom
 
 function updateBoredom(time) {
-    if (time % 3 === 0 ) {
+    if (time % 3 === 0) {
         tamagotchiBoredom += 1;
         tamagotchi.boredom += 1; 
         $(boredomField).html(tamagotchiBoredom);  
@@ -317,4 +318,3 @@ $(createButton).on('click', handleTimer);
 $(playButton).on('click', play); 
 $(feedButton).on('click', feed); 
 $(turnOffButton).on('click', turnOffLights); 
-
