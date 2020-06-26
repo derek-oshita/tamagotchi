@@ -23,7 +23,6 @@ class Tamagotchi {
     };
 }; 
 
-
 // --- Global Variables --- // 
 
 // hardcoded variables
@@ -60,7 +59,7 @@ function handleTamagotchi() {
     $(sleepinessField).html(tamagotchiSleepiness);   
     // message bubble changes 
     messageBubble.html(`Get ${tamagotchiName} to 30 seconds old and keep your metrics under 10 to win.`)
-    // Testing
+    // fyi 
     console.log(tamagotchi); 
     // edge case to ensure only one object is created and the timer can only be started once
     $(createButton).off('click', handleTamagotchi); 
