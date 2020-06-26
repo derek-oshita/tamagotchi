@@ -197,7 +197,7 @@ function updateAgeField(time) {
 // Update boredom
 
 function updateBoredom(time) {
-    if (time % 2 === 0) {
+    if (time % 3 === 0 ) {
         tamagotchiBoredom += 1;
         tamagotchi.boredom += 1; 
         $(boredomField).html(tamagotchiBoredom);  
