@@ -130,7 +130,7 @@ function bounceInNewImage () {
 function updateImage(round) {
     if (round === 2) {
         // update and animate image 
-        $('#charmander').attr('src', 'https://ya-webdesign.com/images600_/bulbasaur-vector-svg-14.png');
+        $('#charmander').attr('src', './photos/charmeleon.png');
         flashNewImage();  
         // changing the value of tamagotchiName and tamagotchi name property when the round changes
         if (tamagotchiName === 'Charmander') {
@@ -144,7 +144,7 @@ function updateImage(round) {
         } 
     } else if (round === 3) {
         // update and animate image 
-        $('#charmander').attr('src', 'https://pm1.narvii.com/5805/58e2f0439b8b7bfa3fcfc57e2669238682dc6bbe_hq.jpg'); 
+        $('#charmander').attr('src', './photos/charizard.jpg'); 
         bounceInNewImage(); 
         // changing the value of tamagotchiName and tamagotchi name property when the round changes
         if (tamagotchiName === 'Charmeleon') {
@@ -197,7 +197,7 @@ function updateAgeField(time) {
 // Update boredom
 
 function updateBoredom(time) {
-    if (time % 3 === 0) {
+    if (time % 2 === 0) {
         tamagotchiBoredom += 1;
         tamagotchi.boredom += 1; 
         $(boredomField).html(tamagotchiBoredom);  

@@ -6,8 +6,8 @@
 }
 
 body {
-    /* borrowed image from imgur */
-    background-image: url("https://i.imgur.com/2gfwG.png");
+    /* borrowed image from imgur  url("https://i.imgur.com/2gfwG.png");*/
+    background-image: url(../photos/day_mode.png);
 }
 
 /* Header  */
