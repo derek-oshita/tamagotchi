@@ -137,14 +137,15 @@ button:hover {
 
 .image-container {
     background-color: white;
-    width: 33.9vw; 
+    width: 25.9vw; 
+    height: 35vh; 
     text-align: center; 
     border: 2px solid #000000;   
 }
 
 #charmander {
-    width: 30vw; 
-    height: 32vh; 
+    width: 22vw; 
+    height: 34vh; 
 }
 
 /* Message Bubble */
