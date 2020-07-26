@@ -276,12 +276,10 @@ function turnOffLights() {
 // Animation library by Animate.style
 
 function darkMode() {
-    $('body').css('background-image', 'url(https://download.hipwallpaper.com/desktop/1920/1080/6/21/EmFuTR.png)'); 
+    $('body').css('background-image', 'url(./photos/dark_mode.png)'); 
     $('[id=dark-mode]').addClass('animate__animated animate__fadeIn');
     $('.metric-container').addClass('animate__animated animate__fadeIn');
-    $('.metric-container').css('background-image', 'url(https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104940799_3259354584104142_7756547770047346504_n.jpg?_nc_cat=107&_nc_sid=e007fa&_nc_ohc=EaV1GEMQUBkAX_uKT0n&_nc_ht=scontent-sjc3-1.xx&oh=4c71a3ac19d5a077ff1cdc73c861d1e2&oe=5F195F28)');
     $('.button-container').addClass('animate__animated animate__fadeIn');
-    $('.button-container').css('background-image', 'url(https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/104827204_3259355104104090_417054165595891729_n.jpg?_nc_cat=110&_nc_sid=e007fa&_nc_ohc=THCHb6GeR7MAX_k4XfB&_nc_ht=scontent-sjc3-1.xx&oh=689251726272dd8f39010720b6f2acf0&oe=5F18863A)'); 
     $('footer').addClass('animate__animated animate__fadeIn')
 }; 
 
