@@ -4,7 +4,7 @@
 
 ## User Story
 
-A user is defined as any individual who opens the tamagotchi page and interacts with it. 
+Welcome to my Tamagotchi! This was one of my first front-end focused projects at GA. It was created using static website trio of HTML, CSS, and JS. Below you'll find some details and on how it works as well as the other tools involved in this project. Please enjoy!
 
 1. The user will start by entering a name into the text field then clicking the "create" button. The button will store that name in an object and then create the object with all of its values. It will also initiate the timer, represented by age. 
 
